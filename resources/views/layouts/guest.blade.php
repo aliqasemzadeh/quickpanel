@@ -13,7 +13,7 @@
     <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="{{ route('home') }}" class="flex items-center">
-                <img src="{{ asset('images/logo.svg') }}" class="mr-3 h-6 sm:h-9" alt="{{ config('app.name') }}">
+                @includeIf('layouts.global.logo', ['class' => 'mr-3 h-6 sm:h-9'])
                 <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">{{ config('app.name') }}</span>
             </a>
             <div class="flex items-center lg:order-2">
@@ -32,15 +32,12 @@
         <div class="mx-auto grid h-screen max-w-screen-xl px-4 py-8 lg:grid-cols-12 lg:gap-20 lg:py-16">
             <div class="w-full place-self-center lg:col-span-6">
                 <div class="mx-auto max-w-lg rounded-lg bg-white p-4 shadow-sm dark:bg-gray-800 sm:p-6">
-                    <a href="#" class="mb-4 inline-flex items-center text-xl font-semibold text-gray-900 dark:text-white sm:mb-6">
-                        {{ $title ?? __('Register') }}
-                    </a>
                     {{ $slot }}
                 </div>
             </div>
             <div class="ml-auto hidden place-self-center lg:col-span-6 lg:flex">
-                <img class="mx-auto dark:hidden" src="{{ asset('images/guest.svg') }}" alt="{{ __('illustration') }}" />
-                <img class="mx-auto hidden dark:flex" src="{{ asset('images/guest.svg') }}" alt="{{ __('illustration') }}" />
+                @includeIf('layouts.global.logo', ['class' => 'mx-auto dark:hidden'])
+                @includeIf('layouts.global.logo', ['class' => 'mx-auto hidden dark:flex'])
             </div>
         </div>
     </section>
