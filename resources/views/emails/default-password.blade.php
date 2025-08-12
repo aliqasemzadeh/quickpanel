@@ -1,32 +1,32 @@
 @component('mail::message')
-# Welcome to {{ config('app.name') }}
+# {{ __('quickpanel.welcome', ['app' => config('app.name')]) }}
 
-Hello {{ $name }},
+{{ __('quickpanel.hello', ['name' => $name]) }},
 
-Your account has been successfully created using OAuth authentication. Here are your account details:
+{{ __('quickpanel.account_created') }}
 
-**Email:** {{ $email }}  
-**Default Password:** {{ $password }}
+**{{ __('quickpanel.email') }}:** {{ $email }}
+**{{ __('quickpanel.default_password') }}:** {{ $password }}
 
-## Important Security Notice
+## {{ __('quickpanel.security_notice') }}
 
-For your security, we recommend changing your password immediately after your first login.
+{{ __('quickpanel.security_recommendation') }}
 
 @component('mail::button', ['url' => route('login')])
-Login to Your Account
+{{ __('quickpanel.login_button') }}
 @endcomponent
 
-## Next Steps
+## {{ __('quickpanel.next_steps') }}
 
-1. Use the login button above to access your account
-2. Navigate to your profile settings
-3. Change your password to something secure and memorable
+1. {{ __('quickpanel.step_1') }}
+2. {{ __('quickpanel.step_2') }}
+3. {{ __('quickpanel.step_3') }}
 
-If you have any questions or need assistance, please don't hesitate to contact our support team.
+{{ __('quickpanel.contact_support') }}
 
-Thanks,<br>
-{{ config('app.name') }} Team
+{{ __('quickpanel.thanks') }},<br>
+{{ __('quickpanel.team', ['app' => config('app.name')]) }}
 
 ---
-*This is an automated message. Please do not reply to this email.*
+*{{ __('quickpanel.automated_message') }}*
 @endcomponent
