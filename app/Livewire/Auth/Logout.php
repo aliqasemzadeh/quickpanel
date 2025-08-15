@@ -37,7 +37,7 @@ class Logout extends Component
         return redirect()->to(route('login'));
     }
 
-    #[Layout('layouts.guest')]
+    #[Layout('layouts.auth')]
     public function render()
     {
         return view('livewire.auth.logout');
