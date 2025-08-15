@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Guest\Auth;
+namespace App\Livewire\Auth;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +46,6 @@ class Register extends Component
 
     public function render()
     {
-        return view('livewire.guest.auth.register')->layout('layouts.guest');
+        return view('livewire.auth.register')->layout('layouts.guest');
     }
 }

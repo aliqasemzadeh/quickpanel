@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Guest\Auth;
+namespace App\Livewire\Auth;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -50,6 +50,6 @@ class Login extends Component
     #[Layout('layouts.guest')]
     public function render()
     {
-        return view('livewire.guest.auth.login');
+        return view('livewire.auth.login');
     }
 }

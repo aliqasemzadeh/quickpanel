@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Guest\Auth;
+namespace App\Livewire\Auth;
 
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
@@ -40,6 +40,6 @@ class Logout extends Component
     #[Layout('layouts.guest')]
     public function render()
     {
-        return view('livewire.guest.auth.logout');
+        return view('livewire.auth.logout');
     }
 }
