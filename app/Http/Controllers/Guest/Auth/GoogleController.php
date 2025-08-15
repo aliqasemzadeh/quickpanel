@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Guest\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Mail\DefaultPasswordMail;
+use App\Mail\OAuthWelcomeMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,41 +23,52 @@ class GoogleController extends Controller
     {
         try {
             $googleUser = Socialite::driver('google')->user();
-            
-            // Check if user exists
-            $user = User::where('email', $googleUser->getEmail())->first();
-            
+
+            // Check if user exists by email or Google ID
+            $user = User::where('email', $googleUser->getEmail())
+                ->orWhere(function ($query) use ($googleUser) {
+                    $query->where('provider', 'google')
+                          ->where('provider_id', $googleUser->getId());
+                })
+                ->first();
+
             if ($user) {
-                // User exists, log them in
+                // User exists - update OAuth info if needed and login
+                if (!$user->provider || $user->provider !== 'google') {
+                    $user->update([
+                        'provider' => 'google',
+                        'provider_id' => $googleUser->getId(),
+                        'avatar' => $googleUser->getAvatar(),
+                    ]);
+                }
+
                 Auth::login($user);
-                return redirect()->intended(route('user.dashboard.index'));
+                return redirect()->intended('/user/dashboard/index');
             }
-            
-            // User doesn't exist, create new user
-            $password = Str::random(12);
+
+            // User doesn't exist - create new user
+            $randomPassword = Str::random(12);
             
             $user = User::create([
                 'name' => $googleUser->getName(),
                 'email' => $googleUser->getEmail(),
-                'password' => Hash::make($password),
+                'password' => Hash::make($randomPassword),
+                'provider' => 'google',
+                'provider_id' => $googleUser->getId(),
                 'avatar' => $googleUser->getAvatar(),
-                'email_verified_at' => now(), // Google emails are verified
+                'email_verified_at' => now(), // OAuth users are pre-verified
             ]);
-            
-            // Send email with default password
-            Mail::to($user->email)->send(new DefaultPasswordMail(
-                $user->name,
-                $user->email,
-                $password
-            ));
-            
-            // Log in the new user
+
+            // Send welcome email with default password
+            Mail::to($user->email)->send(new OAuthWelcomeMail($user, $randomPassword));
+
             Auth::login($user);
-            
-            return redirect()->intended(route('user.dashboard.index'))->with('success', 'Account created successfully! Please check your email for your default password.');
-            
+            return redirect()->intended('/user/dashboard/index');
+
         } catch (\Exception $e) {
-            return redirect()->route('login')->with('error', 'Google authentication failed. Please try again.');
+            return redirect()->route('login')->withErrors([
+                'email' => 'Google authentication failed. Please try again.',
+            ]);
         }
     }
 }

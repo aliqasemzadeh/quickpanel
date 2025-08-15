@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -9,15 +10,19 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class DefaultPasswordMail extends Mailable
+class OAuthWelcomeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    /**
+     * Create a new message instance.
+     */
     public function __construct(
-        public string $name,
-        public string $email,
+        public User $user,
         public string $password
-    ) {}
+    ) {
+        //
+    }
 
     /**
      * Get the message envelope.
@@ -35,10 +40,9 @@ class DefaultPasswordMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.default-password',
+            markdown: 'emails.oauth-welcome',
             with: [
-                'name' => $this->name,
-                'email' => $this->email,
+                'user' => $this->user,
                 'password' => $this->password,
             ],
         );

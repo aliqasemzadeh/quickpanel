@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Guest\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Mail\DefaultPasswordMail;
+use App\Mail\OAuthWelcomeMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,41 +23,52 @@ class GithubController extends Controller
     {
         try {
             $githubUser = Socialite::driver('github')->user();
-            
-            // Check if user exists
-            $user = User::where('email', $githubUser->getEmail())->first();
-            
+
+            // Check if user exists by email or GitHub ID
+            $user = User::where('email', $githubUser->getEmail())
+                ->orWhere(function ($query) use ($githubUser) {
+                    $query->where('provider', 'github')
+                          ->where('provider_id', $githubUser->getId());
+                })
+                ->first();
+
             if ($user) {
-                // User exists, log them in
+                // User exists - update OAuth info if needed and login
+                if (!$user->provider || $user->provider !== 'github') {
+                    $user->update([
+                        'provider' => 'github',
+                        'provider_id' => $githubUser->getId(),
+                        'avatar' => $githubUser->getAvatar(),
+                    ]);
+                }
+
                 Auth::login($user);
-                return redirect()->intended(route('user.dashboard.index'));
+                return redirect()->intended('/user/dashboard/index');
             }
-            
-            // User doesn't exist, create new user
-            $password = Str::random(12);
+
+            // User doesn't exist - create new user
+            $randomPassword = Str::random(12);
             
             $user = User::create([
-                'name' => $githubUser->getName(),
+                'name' => $githubUser->getName() ?: $githubUser->getNickname(),
                 'email' => $githubUser->getEmail(),
-                'password' => Hash::make($password),
+                'password' => Hash::make($randomPassword),
+                'provider' => 'github',
+                'provider_id' => $githubUser->getId(),
                 'avatar' => $githubUser->getAvatar(),
-                'email_verified_at' => now(), // GitHub emails are verified
+                'email_verified_at' => now(), // OAuth users are pre-verified
             ]);
-            
-            // Send email with default password
-            Mail::to($user->email)->send(new DefaultPasswordMail(
-                $user->name,
-                $user->email,
-                $password
-            ));
-            
-            // Log in the new user
+
+            // Send welcome email with default password
+            Mail::to($user->email)->send(new OAuthWelcomeMail($user, $randomPassword));
+
             Auth::login($user);
-            
-            return redirect()->intended(route('user.dashboard.index'))->with('success', 'Account created successfully! Please check your email for your default password.');
-            
+            return redirect()->intended('/user/dashboard/index');
+
         } catch (\Exception $e) {
-            return redirect()->route('login')->with('error', 'GitHub authentication failed. Please try again.');
+            return redirect()->route('login')->withErrors([
+                'email' => 'GitHub authentication failed. Please try again.',
+            ]);
         }
     }
 }

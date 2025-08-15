@@ -4,106 +4,101 @@ This guide explains how to set up OAuth authentication for GitHub and Google in 
 
 ## Prerequisites
 
-- Laravel Socialite is already installed and configured
-- Mail configuration is set up in your `.env` file
+- Laravel Socialite is already installed (`laravel/socialite`)
+- Database migration has been run to add OAuth fields to users table
 
-## Environment Variables
+## GitHub OAuth Setup
 
-Add the following variables to your `.env` file:
+### 1. Create GitHub OAuth App
 
-### GitHub OAuth
-```
+1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
+2. Click "New OAuth App"
+3. Fill in the following details:
+   - **Application name**: Your app name
+   - **Homepage URL**: `http://localhost:8000` (for development)
+   - **Authorization callback URL**: `http://localhost:8000/guest/auth/github/callback`
+
+### 2. Add Environment Variables
+
+Add the following to your `.env` file:
+
+```env
 GITHUB_CLIENT_ID=your_github_client_id
 GITHUB_CLIENT_SECRET=your_github_client_secret
-GITHUB_REDIRECT_URI=http://your-domain.com/guest/auth/github/callback
+GITHUB_REDIRECT_URI=http://localhost:8000/guest/auth/github/callback
 ```
 
-### Google OAuth
-```
+## Google OAuth Setup
+
+### 1. Create Google OAuth App
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select existing one
+3. Enable the Google+ API
+4. Go to "Credentials" → "Create Credentials" → "OAuth 2.0 Client IDs"
+5. Configure the OAuth consent screen
+6. Set up the OAuth client:
+   - **Application type**: Web application
+   - **Authorized redirect URIs**: `http://localhost:8000/guest/auth/google/callback`
+
+### 2. Add Environment Variables
+
+Add the following to your `.env` file:
+
+```env
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
-GOOGLE_REDIRECT_URI=http://your-domain.com/guest/auth/google/callback
+GOOGLE_REDIRECT_URI=http://localhost:8000/guest/auth/google/callback
 ```
-
-### Mail Configuration
-```
-MAIL_MAILER=smtp
-MAIL_HOST=your_smtp_host
-MAIL_PORT=587
-MAIL_USERNAME=your_email
-MAIL_PASSWORD=your_password
-MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=noreply@yourdomain.com
-MAIL_FROM_NAME="${APP_NAME}"
-```
-
-## OAuth Provider Setup
-
-### GitHub Setup
-1. Go to GitHub Settings > Developer settings > OAuth Apps
-2. Click "New OAuth App"
-3. Fill in the details:
-   - Application name: Your app name
-   - Homepage URL: http://your-domain.com
-   - Authorization callback URL: http://your-domain.com/guest/auth/github/callback
-4. Copy the Client ID and Client Secret to your `.env` file
-
-### Google Setup
-1. Go to Google Cloud Console
-2. Create a new project or select existing one
-3. Enable Google+ API
-4. Go to Credentials > Create Credentials > OAuth 2.0 Client IDs
-5. Configure the OAuth consent screen
-6. Set the authorized redirect URIs to: http://your-domain.com/guest/auth/google/callback
-7. Copy the Client ID and Client Secret to your `.env` file
 
 ## How It Works
 
-### User Flow
-1. User clicks "Sign in with GitHub/Google" button
-2. User is redirected to the OAuth provider
-3. User authorizes the application
-4. User is redirected back to your application
-5. The system checks if the user exists:
-   - If exists: User is logged in and redirected to dashboard
-   - If not exists: New user is created with a random password, email is sent with the password, and user is logged in
+### User Authentication Flow
+
+1. **Existing User**: If a user with the same email exists, they are logged in directly
+2. **New User**: If no user exists:
+   - A new user account is created with a random password
+   - OAuth provider information is stored
+   - A welcome email is sent with the default password
+   - User is automatically logged in
 
 ### Features
-- **User Existence Check**: The system checks if a user with the OAuth email already exists
-- **Automatic Login**: Existing users are automatically logged in
-- **User Creation**: New users are created with OAuth data (name, email, avatar)
-- **Email Verification**: OAuth emails are automatically marked as verified
-- **Password Generation**: Random 12-character passwords are generated for new users
-- **Email Notification**: New users receive an email with their default password
-- **Security**: Users are encouraged to change their password after first login
 
-## Routes
+- **Email Verification**: OAuth users are automatically email-verified
+- **Avatar Support**: User avatars from OAuth providers are stored
+- **Provider Linking**: Users can link multiple OAuth accounts to the same email
+- **Security**: Random passwords are generated for new OAuth users
+- **Email Notifications**: Welcome emails with default passwords are sent
 
-The following routes are available:
-- `GET /guest/auth/github/redirect` - Redirect to GitHub OAuth
-- `GET /guest/auth/github/callback` - Handle GitHub OAuth callback
-- `GET /guest/auth/google/redirect` - Redirect to Google OAuth
-- `GET /guest/auth/google/callback` - Handle Google OAuth callback
+### Routes
 
-## Email Template
+- **GitHub**: 
+  - Redirect: `/guest/auth/github/redirect`
+  - Callback: `/guest/auth/github/callback`
+- **Google**:
+  - Redirect: `/guest/auth/google/redirect`
+  - Callback: `/guest/auth/google/callback`
 
-The default password email uses a markdown template located at `resources/views/emails/default-password.blade.php`. The template includes:
-- Welcome message
-- Account details (email and password)
-- Security notice
-- Login button
-- Next steps instructions
+### Database Schema
 
-## Error Handling
+The users table now includes:
+- `provider`: OAuth provider name (github, google)
+- `provider_id`: Unique ID from the OAuth provider
+- `avatar`: User avatar URL from OAuth provider
 
-The controllers include proper error handling:
-- OAuth failures are caught and user is redirected to login with error message
-- Database errors are handled gracefully
-- Email sending failures don't prevent user login
+## Testing
 
-## Security Considerations
+1. Start your Laravel development server: `php artisan serve`
+2. Visit the login page
+3. Click on GitHub or Google login buttons
+4. Complete the OAuth flow
+5. Check the Laravel log file for email content (since mail is set to 'log' driver)
 
-- OAuth emails are automatically verified
-- Random passwords are generated for new users
-- Users are encouraged to change passwords after first login
-- All OAuth data is properly validated before user creation
+## Production Deployment
+
+For production, make sure to:
+
+1. Update OAuth callback URLs to your production domain
+2. Configure proper mail settings in `.env`
+3. Set up proper SSL certificates
+4. Update environment variables with production OAuth credentials 
