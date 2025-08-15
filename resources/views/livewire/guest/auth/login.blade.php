@@ -54,19 +54,15 @@
         </div>
     </div>
     <div class="flex items-center justify-between">
-        <div class="flex items-start">
-            <div class="flex h-5 items-center">
-                <input
-                    id="remember"
-                    wire:model="remember"
-                    aria-describedby="remember"
-                    type="checkbox"
-                    class="focus:ring-3 h-4 w-4 rounded-sm border border-gray-300 bg-gray-50 focus:ring-primary-300 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
-                />
-            </div>
-            <div class="mr-3 text-sm">
-                <label for="remember" class="text-gray-500 dark:text-gray-300">{{ __('quickpanel.remember_me') }}</label>
-            </div>
+        <div class="flex items-center">
+            <input
+                id="remember"
+                wire:model="remember"
+                aria-describedby="remember"
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            />
+            <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ __('quickpanel.remember_me') }}</label>
         </div>
         <a href="#" class="text-sm font-medium text-primary-700 hover:underline dark:text-primary-500">{{ __('quickpanel.forgot_your_password') }}</a>
     </div>
