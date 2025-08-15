@@ -12,6 +12,7 @@ return [
     'log_in_to_your_account' => 'Log in to your account',
     'email_placeholder' => 'Email address',
     'password_placeholder' => 'Password',
+    'login' => 'Login',
 
     // Auth - Logout confirmation
     'confirm_logout' => 'Confirm logout',

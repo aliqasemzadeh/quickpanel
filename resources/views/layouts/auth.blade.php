@@ -32,6 +32,7 @@
         <div class="mx-auto grid h-screen max-w-screen-xl px-4 py-8 lg:grid-cols-12 lg:gap-20 lg:py-16">
             <div class="w-full place-self-center lg:col-span-6">
                 <div class="mx-auto max-w-lg rounded-lg bg-white p-4 shadow-sm dark:bg-gray-800 sm:p-6">
+                    <h5 class="text-xl font-medium text-gray-900 dark:text-white">{{ $title ?? "" }}</h5>
                     {{ $slot }}
                 </div>
             </div>
