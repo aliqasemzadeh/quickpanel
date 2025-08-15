@@ -1,6 +1,8 @@
 <?php
 return [
     'direction' => "ltr",
+
+    // Auth - Login
     'login_google' => 'Sign in with Google',
     'login_github' => 'Sign in with GitHub',
     'or' => 'Or',
@@ -10,4 +12,12 @@ return [
     'log_in_to_your_account' => 'Log in to your account',
     'email_placeholder' => 'Email address',
     'password_placeholder' => 'Password',
+
+    // Auth - Logout confirmation
+    'confirm_logout' => 'Confirm logout',
+    'confirm_logout_message' => 'Are you sure you want to log out of your account?',
+    'yes_log_me_out' => 'Yes, log me out',
+    'logging_out' => 'Logging out...',
+    'cancel' => 'Cancel',
+    'logged_out' => 'You have been logged out.',
 ];
