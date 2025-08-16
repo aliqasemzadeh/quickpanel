@@ -21,4 +21,7 @@ return [
     'logging_out' => 'Logging out...',
     'cancel' => 'Cancel',
     'logged_out' => 'You have been logged out.',
+    'dashboard' => 'Dashboard',
+    'home' => 'Home',
+    'logout' => 'Logout',
 ];
