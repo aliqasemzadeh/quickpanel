@@ -39,6 +39,7 @@
         </div>
     </section>
 
+
 </main>
 
 @vite('resources/js/app.js')
@@ -46,3 +47,4 @@
 @livewireScripts
 </body>
 </html>
+
