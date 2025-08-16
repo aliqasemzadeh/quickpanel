@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Guest\Auth;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\OAuthWelcomeMail;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -24,37 +23,28 @@ class GoogleController extends Controller
         try {
             $googleUser = Socialite::driver('google')->user();
 
-            // Check if user exists by email or Google ID
+            // Check if user exists by email only
             $user = User::where('email', $googleUser->getEmail())
-                ->orWhere(function ($query) use ($googleUser) {
-                    $query->where('provider', 'google')
-                          ->where('provider_id', $googleUser->getId());
-                })
                 ->first();
 
             if ($user) {
-                // User exists - update OAuth info if needed and login
-                if (!$user->provider || $user->provider !== 'google') {
-                    $user->update([
-                        'provider' => 'google',
-                        'provider_id' => $googleUser->getId(),
-                        'avatar' => $googleUser->getAvatar(),
-                    ]);
-                }
+                // User exists - only update name and avatar, do not store provider/provider_id
+                $user->update([
+                    'name' => $googleUser->getName(),
+                    'avatar' => $googleUser->getAvatar(),
+                ]);
 
                 Auth::login($user);
                 return redirect()->intended('/user/dashboard/index');
             }
 
-            // User doesn't exist - create new user
+            // User doesn't exist - create new user without provider/provider_id
             $randomPassword = Str::random(12);
-            
+
             $user = User::create([
                 'name' => $googleUser->getName(),
                 'email' => $googleUser->getEmail(),
                 'password' => Hash::make($randomPassword),
-                'provider' => 'google',
-                'provider_id' => $googleUser->getId(),
                 'avatar' => $googleUser->getAvatar(),
                 'email_verified_at' => now(), // OAuth users are pre-verified
             ]);
