@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\UserManagement\User;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Livewire\Attributes\On;
 use PowerComponents\LivewirePowerGrid\Button;
 use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
@@ -84,20 +85,47 @@ final class Table extends PowerGridComponent
         ];
     }
 
-    #[\Livewire\Attributes\On('edit')]
-    public function edit($rowId): void
+    #[On('users:refresh')]
+    public function refreshTable(): void
     {
-        $this->js('alert('.$rowId.')');
+        // Trigger Livewire to re-render
+        $this->dispatch('$refresh');
+    }
+
+    #[On('delete-user')]
+    public function deleteUser(int $rowId): void
+    {
+        if ($rowId === auth()->id()) {
+            // Avoid deleting yourself; optional safety
+            return;
+        }
+
+        if ($user = User::find($rowId)) {
+            $user->delete();
+            session()->flash('success', __('quickpanel.logged_out'));
+        }
+
+        // Refresh table after delete
+        $this->dispatch('$refresh');
     }
 
     public function actions(User $row): array
     {
         return [
             Button::add('edit')
-                ->slot('Edit: '.$row->id)
+                ->slot(__('Edit'))
                 ->id()
                 ->class('pg-btn-white dark:ring-pg-primary-600 dark:border-pg-primary-600 dark:hover:bg-pg-primary-700 dark:ring-offset-pg-primary-800 dark:text-pg-primary-300 dark:bg-pg-primary-700')
-                ->dispatch('edit', ['rowId' => $row->id])
+                ->dispatch('modal-open', ['component' => 'admin.user-management.user.edit', 'props' => ['userId' => $row->id]]),
+
+            Button::add('delete')
+                ->slot(__('Delete'))
+                ->id()
+                ->class('text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-red-500')
+                ->attributes([
+                    'onclick' => "if(!confirm('" . __('Are you sure you want to delete this user?') . "')){ event.stopImmediatePropagation(); event.preventDefault(); }",
+                ])
+                ->dispatch('delete-user', ['rowId' => $row->id]),
         ];
     }
 
