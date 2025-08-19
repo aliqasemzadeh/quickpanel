@@ -25,4 +25,6 @@ return [
     'admin_dashboard' => 'Admin Dashboard',
     'home' => 'Home',
     'logout' => 'Logout',
+    'user_management' => 'User Management',
+    'users' => 'Users',
 ];
