@@ -1,4 +1,3 @@
-@import "../../vendor/wire-elements/pro/resources/css/tailwind/overlay-component.css";
 @import 'tailwindcss';
 @import "flowbite/src/themes/default.css";
 
@@ -9,8 +8,7 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 @source "../../node_modules/flowbite";
-@source '../../vendor/wire-elements/pro/config/wire-elements-pro.php';
-@source '../../vendor/wire-elements/pro/**/*.blade.php';
+@source '../../vendor/elegantly/livewire-modal/resources/views/**/*.blade.php",';
 
 @theme {
     --color-primary-50: #eff6ff;

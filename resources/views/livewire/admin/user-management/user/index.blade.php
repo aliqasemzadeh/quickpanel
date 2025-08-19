@@ -1,3 +1,4 @@
 <div>
-    {{-- Stop trying to control. --}}
+
+    <livewire:admin.user-management.user.table/>
 </div>

@@ -42,7 +42,7 @@
 </main>
 
 @vite('resources/js/app.js')
-@livewire('slide-over-pro')
+<livewire:modal />
 @livewireScripts
 </body>
 </html>
