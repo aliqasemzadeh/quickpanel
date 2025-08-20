@@ -16,6 +16,8 @@
         "laravel/socialite": "^5.23",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6",
+        "mcamara/laravel-localization": "^2.3",
+        "opcodesio/log-viewer": "^3.19",
         "php-flasher/flasher-laravel": "^2.1",
         "power-components/livewire-powergrid": "^6.5",
         "spatie/laravel-permission": "^6.21"
