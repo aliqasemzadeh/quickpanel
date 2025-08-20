@@ -25,18 +25,6 @@ final class Table extends PowerGridComponent
                 ->slot(__('quickpanel.create_user'))
                 ->class('text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800')
                 ->dispatch('modal-open', ['component' => 'admin.user-management.user.create']),
-
-            // Added: Roles button with extra-small styling
-            Button::add('roles')
-                ->slot(__('quickpanel.roles'))
-                ->class('px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800')
-                ->dispatch('modal-open', ['component' => 'admin.user-management.user.roles']),
-
-            // Added: Permissions button with extra-small styling
-            Button::add('permissions')
-                ->slot(__('quickpanel.permissions'))
-                ->class('px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800')
-                ->dispatch('modal-open', ['component' => 'admin.user-management.user.permissions']),
         ];
     }
 
@@ -124,12 +112,25 @@ final class Table extends PowerGridComponent
                 ->class('pg-btn-white dark:ring-pg-primary-600 dark:border-pg-primary-600 dark:hover:bg-pg-primary-700 dark:ring-offset-pg-primary-800 dark:text-pg-primary-300 dark:bg-pg-primary-700')
                 ->dispatch('modal-open', ['component' => 'administrator.user-management.user.edit', 'props' => ['userId' => $row->id]]),
 
+            // Added: Roles button with extra-small styling
+            Button::add('roles')
+                ->slot(__('quickpanel.roles'))
+                ->class('px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800')
+                ->dispatch('modal-open', ['component' => 'administrator.user-management.user.roles']),
+
+            // Added: Permissions button with extra-small styling
+            Button::add('permissions')
+                ->slot(__('quickpanel.permissions'))
+                ->class('px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800')
+                ->dispatch('modal-open', ['component' => 'administrator.user-management.user.permissions']),
+
             Button::add('delete')
                 ->slot(__('quickpanel.delete'))
                 ->id()
                 ->class('text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-red-500')
                 ->confirm('Are you sure you want to edit?')
                 ->dispatch('administrator.user-management.user.table:delete-user', ['rowId' => $row->id]),
+
         ];
     }
 

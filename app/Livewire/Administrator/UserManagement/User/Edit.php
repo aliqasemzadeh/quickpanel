@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Administrator\UserManagement\User;
 
-use App\Livewire\Admin\UserManagement\User\Table as UserTable;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Validate;

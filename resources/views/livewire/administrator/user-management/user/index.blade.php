@@ -1,4 +1,4 @@
 <div>
 
-    <livewire:admin.user-management.user.table/>
+    <livewire:administrator.user-management.user.table/>
 </div>
