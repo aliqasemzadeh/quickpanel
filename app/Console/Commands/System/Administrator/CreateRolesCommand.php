@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\System\Admin;
+namespace App\Console\Commands\System\Administrator;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +15,7 @@ class CreateRolesCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'system:admin:create-roles-command';
+    protected $signature = 'system:administrator:create-roles-command';
 
     /**
      * The console command description.

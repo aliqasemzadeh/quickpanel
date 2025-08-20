@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\System\Admin;
+namespace App\Console\Commands\System\Administrator;
 
 use Illuminate\Console\Command;
 use Spatie\Permission\Models\Permission;
@@ -13,7 +13,7 @@ class CreatePermissionsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'system:admin:create-permissions-command';
+    protected $signature = 'system:administrator:create-permissions-command';
 
     /**
      * The console command description.

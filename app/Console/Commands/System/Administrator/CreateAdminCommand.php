@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\System\Admin;
+namespace App\Console\Commands\System\Administrator;
 
 use App\Models\User;
 use Illuminate\Console\Command;
@@ -12,7 +12,7 @@ class CreateAdminCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'system:admin:create-admin-command';
+    protected $signature = 'system:administrator:create-admin-command';
 
     /**
      * The console command description.
