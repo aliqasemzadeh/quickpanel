@@ -24,7 +24,7 @@ final class Table extends PowerGridComponent
             Button::add('create-user')
                 ->slot(__('quickpanel.create_user'))
                 ->class('text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800')
-                ->dispatch('modal-open', ['component' => 'admin.user-management.user.create']),
+                ->dispatch('modal-open', ['component' => 'administrator.user-management.user.create']),
         ];
     }
 
@@ -87,14 +87,14 @@ final class Table extends PowerGridComponent
     }
 
     #[On('administrator.user-management.user.table:delete-user')]
-    public function deleteUser(int $rowId): void
+    public function deleteUser(int $userId): void
     {
-        if ($rowId === auth()->id()) {
+        if ($userId === auth()->id()) {
             // Avoid deleting yourself; optional safety
             return;
         }
 
-        if ($user = User::find($rowId)) {
+        if ($user = User::find($userId)) {
             $user->delete();
             Toaster::success( __('quickpanel.user_deleted'));
         }
@@ -116,20 +116,20 @@ final class Table extends PowerGridComponent
             Button::add('roles')
                 ->slot(__('quickpanel.roles'))
                 ->class('px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800')
-                ->dispatch('modal-open', ['component' => 'administrator.user-management.user.roles']),
+                ->dispatch('modal-open', ['component' => 'administrator.user-management.user.roles', 'props' => ['userId' => $row->id]]),
 
             // Added: Permissions button with extra-small styling
             Button::add('permissions')
                 ->slot(__('quickpanel.permissions'))
                 ->class('px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800')
-                ->dispatch('modal-open', ['component' => 'administrator.user-management.user.permissions']),
+                ->dispatch('modal-open', ['component' => 'administrator.user-management.user.permissions', 'props' => ['userId' => $row->id]]),
 
             Button::add('delete')
                 ->slot(__('quickpanel.delete'))
                 ->id()
                 ->class('text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-red-500')
                 ->confirm('Are you sure you want to edit?')
-                ->dispatch('administrator.user-management.user.table:delete-user', ['rowId' => $row->id]),
+                ->dispatch('administrator.user-management.user.table:delete-user', ['userId' => $row->id]),
 
         ];
     }

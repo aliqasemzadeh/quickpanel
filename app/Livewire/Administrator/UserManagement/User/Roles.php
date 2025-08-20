@@ -6,6 +6,7 @@ use App\Models\User;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Masmerise\Toaster\Toaster;
 use Spatie\Permission\Models\Role;
 
 class Roles extends Component
@@ -13,18 +14,10 @@ class Roles extends Component
     use WithPagination;
     public User $user;
     public $search;
-    public bool $open = false;
 
-    #[On('administrator.user-management.user.roles.assign-data')]
-    public function assignData($id): void
+    public function mount($userId): void
     {
-        $this->user = User::findOrFail($id);
-        $this->open = true;
-    }
-
-    public function close(): void
-    {
-        $this->open = false;
+        $this->user = User::findOrFail($userId);
     }
 
     public function assign(Role $role)
@@ -34,6 +27,7 @@ class Roles extends Component
         }
         $this->user->assignRole($role->name);
         $this->dispatch('administrator.user-management.user.roles');
+        Toaster::success( __('quickpanel.role_assigned'));
     }
 
     public function delete(Role $role): void
@@ -43,6 +37,7 @@ class Roles extends Component
         }
         $this->user->removeRole($role->name);
         $this->dispatch('administrator.user-management.user.roles');
+        Toaster::success( __('quickpanel.role_deleted'));
     }
 
 

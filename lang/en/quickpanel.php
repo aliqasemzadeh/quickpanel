@@ -126,4 +126,7 @@ return [
     'replay' => 'Replay',
     'optional' => 'optional',
     'change_password' => 'Change Password',
+    'assign' => 'Assign',
+    'remove' => 'Remove',
+    'close' => 'Close',
 ];
