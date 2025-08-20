@@ -147,21 +147,21 @@
                         <li>
                             <a
                                 href="{{ route('admin.user-management.user.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.user.*') ? ' hidden' : ''  }}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.user.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.users') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('admin.user-management.role.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.role.*') ? ' hidden' : ''  }}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.role.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.roles') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('admin.user-management.permission.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.permission.*') ? ' hidden' : ''  }}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.permission.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.permissions') }}</a
                             >
                         </li>
