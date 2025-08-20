@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? "" }}</title>
+    <title>{{ $title ?? "" }} - {{ config('app.name', 'QuickPanel') }}</title>
 
     @vite('resources/css/app.css')
     @livewireStyles
@@ -99,7 +99,7 @@
             <ul class="space-y-2">
                 <li>
                     <a
-                        href="#"
+                        href="{{ route('admin.dashboard.index') }}"
                         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                     >
                         <svg
@@ -112,7 +112,7 @@
                             <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                             <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                         </svg>
-                        <span class="ml-3">Overview</span>
+                        <span class="ml-3">{{ __('quickpanel.dashboard') }}</span>
                     </a>
                 </li>
                 <li>
@@ -143,7 +143,7 @@
                             ></path>
                         </svg>
                     </button>
-                    <ul id="dropdown-user-management" class="hidden py-2 space-y-2">
+                    <ul id="dropdown-user-management" class="py-2 space-y-2 {{ request()->routeIs('administrator.user-management.*') ? ' hidden' : ''  }}">
                         <li>
                             <a
                                 href="{{ route('admin.user-management.user.index') }}"
