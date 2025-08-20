@@ -126,4 +126,5 @@ return [
     'view' => 'View',
     'replay' => 'Replay',
     'optional' => 'optional',
+    'change_password' => 'Change Password',
 ];
