@@ -48,11 +48,11 @@ class Permissions extends Component
     #[On('administrator.user-management.user.permissions.render')]
     public function render()
     {
-        $this->authorize('administrator_user_permissions');
+        //$this->authorize('administrator_user_permissions');
         if($this->search != "") {
-            $permissions = Permission::where('name', 'like', '%'.$this->search.'%')->paginate();
+            $permissions = Permission::where('name', 'like', '%'.$this->search.'%')->paginate(5);
         } else {
-            $permissions = Permission::paginate();
+            $permissions = Permission::paginate(5);
         }
         return view('livewire.administrator.user-management.user.permissions', compact('permissions'));
     }

@@ -13,7 +13,7 @@ class Index extends Component
     {
         $this->authorize('administrator_setting_function_index');
         Artisan::call('system:administrator:create-permissions-command');
-        Toaster::success(__('jetadmin.permissions_updated'));
+        Toaster::success(__('quickpanel.permissions_updated'));
     }
     #[Layout('layouts.administrator')]
     public function render()

@@ -17,23 +17,30 @@
 
         <form wire:submit.prevent="create" class="space-y-6">
             <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.name') }}</label>
-                <input type="text" wire:model.defer="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
-                @error('name')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
+                <label class="{{ $errors->has('name') ? 'block mb-2 text-sm font-medium text-red-700 dark:text-red-500' : 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' }}">{{ __('quickpanel.name') }}</label>
+                <input type="text" wire:model.defer="name" class="{{ $errors->has('name')
+                    ? 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500'
+                    : 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white' }}" />
+                @error('name')<p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>@enderror
             </div>
             <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.email') }}</label>
-                <input type="email" wire:model.defer="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
-                @error('email')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
+                <label class="{{ $errors->has('email') ? 'block mb-2 text-sm font-medium text-red-700 dark:text-red-500' : 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' }}">{{ __('quickpanel.email') }}</label>
+                <input type="email" wire:model.defer="email" class="{{ $errors->has('email')
+                    ? 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500'
+                    : 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white' }}" />
+                <p id="helper-text-email" class="mt-2 text-sm text-gray-500 dark:text-gray-400">{{ __('quickpanel.helper_email_privacy') }} <a href="#" class="font-medium text-blue-600 hover:underline dark:text-blue-500">{{ __('quickpanel.privacy_policy') }}</a>.</p>
+                @error('email')<p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>@enderror
             </div>
             <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.password') }}</label>
-                <input type="password" wire:model.defer="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
-                @error('password')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
+                <label class="{{ $errors->has('password') ? 'block mb-2 text-sm font-medium text-red-700 dark:text-red-500' : 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' }}">{{ __('quickpanel.password') }}</label>
+                <input type="password" wire:model.defer="password" class="{{ $errors->has('password')
+                    ? 'bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500'
+                    : 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white' }}" />
+                @error('password')<p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>@enderror
             </div>
             <div>
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.password_confirmation') }}</label>
-                <input type="password" wire:model.defer="password_confirmation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
+                <input type="password" wire:model.defer="password_confirmation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
             </div>
             <div>
                 <button type="button" wire:click="$dispatch('modal-close')" class="w-full inline-flex items-center justify-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">

@@ -131,4 +131,8 @@ return [
     'remove' => 'Remove',
     'close' => 'Close',
     'functions' => 'Functions',
+
+    // Helpers
+    'helper_email_privacy' => "We’ll never share your details. Read our",
+    'privacy_policy' => 'Privacy Policy',
 ];
