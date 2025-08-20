@@ -49,6 +49,7 @@ return [
     'create_permission_description' => 'Create a new permission with the form below.',
     'edit_permission' => 'Edit Permission',
     'edit_permission_description' => 'Edit the permission with the form below.',
+    'update_permissions' => 'Update Permissions',
     'permissions' => 'Permissions',
     'permissions_description' => 'You can manage permissions here.',
     'create' => 'Create',
