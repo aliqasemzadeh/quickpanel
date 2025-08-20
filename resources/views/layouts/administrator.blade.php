@@ -167,6 +167,56 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <button
+                        type="button"
+                        class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        aria-controls="dropdown-setting-management"
+                        data-collapse-toggle="dropdown-setting-management"
+                    >
+                        <svg  class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+
+                        <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                        >{{ __('quickpanel.setting_management') }}</span
+                        >
+                        <svg
+                            aria-hidden="true"
+                            class="w-6 h-6"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </button>
+                    <ul id="dropdown-setting-management" class="py-2 space-y-2 {{ request()->routeIs('administrator.setting-management.*') ? '' : ' hidden'  }}">
+                        <li>
+                            <a
+                                href="{{ route('administrator.setting-management.option.index') }}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.user.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                            >{{ __('quickpanel.options') }}</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ route('administrator.setting-management.function.index') }}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.role.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                            >{{ __('quickpanel.functions') }}</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ route('administrator.user-management.permission.index') }}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.permission.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                            >{{ __('quickpanel.permissions') }}</a
+                            >
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
