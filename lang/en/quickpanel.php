@@ -129,4 +129,5 @@ return [
     'assign' => 'Assign',
     'remove' => 'Remove',
     'close' => 'Close',
+    'functions' => 'Functions',
 ];

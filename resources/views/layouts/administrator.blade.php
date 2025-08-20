@@ -208,13 +208,6 @@
                             >{{ __('quickpanel.functions') }}</a
                             >
                         </li>
-                        <li>
-                            <a
-                                href="{{ route('administrator.user-management.permission.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.permission.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
-                            >{{ __('quickpanel.permissions') }}</a
-                            >
-                        </li>
                     </ul>
                 </li>
             </ul>
