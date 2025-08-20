@@ -6,10 +6,12 @@ Route::get('/', App\Livewire\Front\Home\Index::class)->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/user/dashboard/index', App\Livewire\User\Dashboard\Index::class)->name('user.dashboard.index');
-    Route::get('/admin/dashboard/index', App\Livewire\Admin\Dashboard\Index::class)->name('admin.dashboard.index');
-    Route::get('/admin/user-management/user/index', App\Livewire\Admin\UserManagement\User\Index::class)->name('admin.user-management.user.index');
-    Route::get('/admin/user-management/role/index', App\Livewire\Admin\UserManagement\Role\Index::class)->name('admin.user-management.role.index');
-    Route::get('/admin/user-management/permission/index', App\Livewire\Admin\UserManagement\Permission\Index::class)->name('admin.user-management.permission.index');
+
+
+    Route::get('/administrator/dashboard/index', App\Livewire\Administrator\Dashboard\Index::class)->name('administrator.dashboard.index');
+    Route::get('/administrator/user-management/user/index', App\Livewire\Administrator\UserManagement\User\Index::class)->name('administrator.user-management.user.index');
+    Route::get('/administrator/user-management/role/index', App\Livewire\Administrator\UserManagement\Role\Index::class)->name('administrator.user-management.role.index');
+    Route::get('/administrator/user-management/permission/index', App\Livewire\Administrator\UserManagement\Permission\Index::class)->name('administrator.user-management.permission.index');
 });
 
 require_once __DIR__.'/auth.php';

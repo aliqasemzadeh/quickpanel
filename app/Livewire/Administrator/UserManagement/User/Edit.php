@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Admin\UserManagement\User;
+namespace App\Livewire\Administrator\UserManagement\User;
 
 use App\Livewire\Admin\UserManagement\User\Table as UserTable;
 use App\Models\User;
@@ -53,13 +53,13 @@ class Edit extends Component
         // Required by issue: use this exact message key
         Toaster::success( __('quickpanel.user_edited'));
         // Refresh the users table
-        $this->dispatch('pg:eventRefresh-admin.user-management.user.table');
+        $this->dispatch('pg:eventRefresh-administrator.user-management.user.table');
 
         $this->dispatch('modal-close');
     }
 
     public function render()
     {
-        return view('livewire.admin.user-management.user.edit');
+        return view('livewire.administrator.user-management.user.edit');
     }
 }

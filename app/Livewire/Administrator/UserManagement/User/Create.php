@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Livewire\Admin\UserManagement\User;
+namespace App\Livewire\Administrator\UserManagement\User;
 
-use App\Livewire\Admin\UserManagement\User\Table as UserTable;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Validate;
@@ -37,7 +36,7 @@ class Create extends Component
 
 
         // Refresh the users table
-        $this->dispatch('pg:eventRefresh-admin.user-management.user.table');
+        $this->dispatch('pg:eventRefresh-administrator.user-management.user.table');
 
         // Close the modal (livewire-modal package)
         $this->dispatch('modal-close');
@@ -48,6 +47,6 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.admin.user-management.user.create');
+        return view('livewire.administrator.user-management.user.create');
     }
 }
