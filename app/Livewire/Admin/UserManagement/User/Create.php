@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Masmerise\Toaster\Toaster;
 
 class Create extends Component
 {
@@ -32,17 +33,23 @@ class Create extends Component
         ]);
 
         // Required by issue: use this exact message key
-        session()->flash('success', __('quickpanel.logged_out'));
+        Toaster::success( __('quickpanel.user_created'));
 
 
         // Refresh the users table
-        $this->dispatch('users:refresh')->to(UserTable::class);
+        $this->dispatch('pg:eventRefresh-admin.user-management.user.table');
 
         // Close the modal (livewire-modal package)
         $this->dispatch('modal-close');
 
         // Reset form fields
         $this->reset(['name', 'email', 'password', 'password_confirmation']);
+    }
+
+    public function show(): void
+    {
+        // Required by issue: use this exact message key
+        Toaster::success( __('quickpanel.user_created'));
     }
 
     public function render()

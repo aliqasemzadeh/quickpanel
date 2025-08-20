@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Masmerise\Toaster\Toaster;
 
 class Edit extends Component
 {
@@ -49,9 +50,11 @@ class Edit extends Component
         }
         $user->save();
 
-        session()->flash('success', __('quickpanel.logged_out'));
+        // Required by issue: use this exact message key
+        Toaster::success( __('quickpanel.user_edited'));
+        // Refresh the users table
+        $this->dispatch('pg:eventRefresh-admin.user-management.user.table');
 
-        $this->dispatch('users:refresh')->to(UserTable::class);
         $this->dispatch('modal-close');
     }
 
