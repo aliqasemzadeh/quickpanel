@@ -42,6 +42,7 @@
 </main>
 
 @vite('resources/js/app.js')
+<x-toaster-hub />
 <livewire:modal />
 @livewireScripts
 </body>
