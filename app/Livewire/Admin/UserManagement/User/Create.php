@@ -46,12 +46,6 @@ class Create extends Component
         $this->reset(['name', 'email', 'password', 'password_confirmation']);
     }
 
-    public function show(): void
-    {
-        // Required by issue: use this exact message key
-        Toaster::success( __('quickpanel.user_created'));
-    }
-
     public function render()
     {
         return view('livewire.admin.user-management.user.create');

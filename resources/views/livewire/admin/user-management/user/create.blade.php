@@ -54,6 +54,5 @@
                 </button>
             </div>
         </form>
-        <button wire:click="show">show</button>
     </x-livewire-modal::slideover>
 </x-livewire-modal::stack>
