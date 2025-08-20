@@ -15,7 +15,7 @@
             </button>
         </div>
 
-        <form wire:submit.prevent="save" class="space-y-6">
+        <form wire:submit.prevent="create" class="space-y-6">
             <div>
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.name') }}</label>
                 <input type="text" wire:model.defer="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
@@ -35,7 +35,7 @@
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.password_confirmation') }}</label>
                 <input type="password" wire:model.defer="password_confirmation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
             </div>
-            <div class="mt-6 space-y-2">
+            <div>
                 <button type="button" wire:click="$dispatch('modal-close')" class="w-full inline-flex items-center justify-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
                     <svg class="w-4 h-4 me-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                         <path d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm3.707-10.707a1 1 0 0 0-1.414-1.414L10 8.586 7.707 6.293a1 1 0 1 0-1.414 1.414L8.586 10l-2.293 2.293a1 1 0 0 0 1.414 1.414L10 11.414l2.293 2.293a1 1 0 0 0 1.414-1.414L11.414 10l2.293-2.293Z"/>

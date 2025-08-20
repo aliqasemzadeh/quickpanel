@@ -21,7 +21,7 @@ class Create extends Component
 
     public string $password_confirmation = '';
 
-    public function save(): void
+    public function create(): void
     {
         $this->validate();
 
@@ -33,6 +33,7 @@ class Create extends Component
 
         // Required by issue: use this exact message key
         session()->flash('success', __('quickpanel.logged_out'));
+
 
         // Refresh the users table
         $this->dispatch('users:refresh')->to(UserTable::class);
