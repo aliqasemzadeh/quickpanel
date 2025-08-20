@@ -100,7 +100,7 @@
                 <li>
                     <a
                         href="{{ route('admin.dashboard.index') }}"
-                        class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                        class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {{ request()->routeIs('admin.dashboard.index') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                     >
                         <svg
                             aria-hidden="true"
@@ -143,25 +143,25 @@
                             ></path>
                         </svg>
                     </button>
-                    <ul id="dropdown-user-management" class="py-2 space-y-2 {{ request()->routeIs('administrator.user-management.*') ? ' hidden' : ''  }}">
+                    <ul id="dropdown-user-management" class="py-2 space-y-2 {{ request()->routeIs('admin.user-management.*') ? '' : ' hidden'  }}">
                         <li>
                             <a
                                 href="{{ route('admin.user-management.user.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.user.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('admin.user-management.user.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.users') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('admin.user-management.role.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.role.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('admin.user-management.role.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.roles') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('admin.user-management.permission.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.permission.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('admin.user-management.permission.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.permissions') }}</a
                             >
                         </li>
