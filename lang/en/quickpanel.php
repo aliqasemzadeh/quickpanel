@@ -28,6 +28,13 @@ return [
     'user_management' => 'User Management',
     'user_created' => 'User Created.',
     'user_edited' => 'User Edited.',
+        'user_deleted' => 'User Deleted.',
+        'permission_created' => 'Permission Created.',
+        'permission_edited' => 'Permission Edited.',
+        'permission_deleted' => 'Permission Deleted.',
+            'role_created' => 'Role Created.',
+            'role_edited' => 'Role Edited.',
+            'role_deleted' => 'Role Deleted.',
     'user' => 'User',
     'create_user' => 'Create User',
     'create_user_description' => 'Create a new user with the form below.',
@@ -131,6 +138,10 @@ return [
     'remove' => 'Remove',
     'close' => 'Close',
     'functions' => 'Functions',
+
+    // General
+    'added' => 'Added',
+    'not_translated' => 'Not translated',
 
     // Helpers
     'helper_email_privacy' => "We’ll never share your details. Read our",

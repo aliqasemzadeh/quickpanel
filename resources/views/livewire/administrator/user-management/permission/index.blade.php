@@ -1,3 +1,6 @@
+<x-slot name="title">
+    {{ __('quickpanel.permissions') }}
+</x-slot>
 <div>
-    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
+    <livewire:administrator.user-management.permission.table/>
 </div>

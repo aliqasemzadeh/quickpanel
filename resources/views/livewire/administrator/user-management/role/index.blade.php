@@ -1,3 +1,6 @@
+<x-slot name="title">
+    {{ __('quickpanel.roles') }}
+</x-slot>
 <div>
-    {{-- Success is as dangerous as failure. --}}
+    <livewire:administrator.user-management.role.table/>
 </div>
