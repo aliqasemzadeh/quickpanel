@@ -158,7 +158,7 @@ return [
     'not_translated' => 'Not translated',
 
     // Helpers
-    'helper_email_privacy' => "We’ll never share your details. Read our",
+    'helper_email_privacy' => '',
     'privacy_policy' => 'Privacy Policy',
 
     // Emails (Markdown)

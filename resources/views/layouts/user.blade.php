@@ -99,8 +99,8 @@
             <ul class="space-y-2">
                 <li>
                     <a
-                        href="{{ route('administrator.dashboard.index') }}"
-                        class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                        href="{{ route('user.dashboard.index') }}"
+                        class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {{ request()->routeIs('user.dashboard.index') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                     >
                         <svg
                             aria-hidden="true"
