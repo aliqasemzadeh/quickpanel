@@ -25,6 +25,8 @@ return [
     'forgot_password_email_sent' => 'If the email exists, a reset code has been sent.',
     'invalid_reset_code' => 'Invalid or expired reset code.',
     'password_changed_successfully' => 'Your password has been changed successfully.',
+    'invalid_current_password' => 'Your current password is incorrect.',
+    'password_same_as_old' => 'New password cannot be the same as the current password.',
 
     // Auth - Logout confirmation
     'confirm_logout' => 'Confirm logout',
@@ -175,4 +177,5 @@ return [
 
     // Generic email errors
     'email_send_failed' => 'Unable to send email at this time.',
+    'profile' => 'Profile',
 ];
