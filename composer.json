@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "aliqasemzadeh/quickpanel",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "QuickPanel is TALL stack based Laravel application.",
     "keywords": [
         "laravel",
         "framework"
