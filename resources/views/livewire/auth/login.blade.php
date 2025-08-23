@@ -64,14 +64,19 @@
             />
             <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ __('quickpanel.remember_me') }}</label>
         </div>
-        <a href="#" class="text-sm font-medium text-primary-700 hover:underline dark:text-primary-500">{{ __('quickpanel.forgot_your_password') }}</a>
+        <a href="{{ route('forget-password') }}" class="text-sm font-medium text-primary-700 hover:underline dark:text-primary-500">{{ __('quickpanel.forgot_your_password') }}</a>
     </div>
     <div class="flex flex-col items-center justify-center gap-2">
         <button
             type="submit"
             wire:loading.attr="disabled"
-            class="w-full rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 disabled:opacity-50 disabled:cursor-not-allowed"
+            wire:target="login"
+            class="w-full rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center"
         >
+            <svg wire:loading wire:target="login" class="me-2 h-4 w-4 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+            </svg>
             <span>{{ __('quickpanel.log_in_to_your_account') }}</span>
         </button>
         <a

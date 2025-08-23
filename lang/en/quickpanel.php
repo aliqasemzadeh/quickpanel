@@ -14,6 +14,18 @@ return [
     'password_placeholder' => 'Password',
     'login' => 'Login',
 
+    // Auth - Forgot/Change Password
+    'forgot_password_title' => 'Forgot Password',
+    'send_reset_code' => 'Send Reset Code',
+    'already_have_code' => 'Already have a code? Change password',
+    'need_new_code' => 'Need a new code? Request again',
+    'back_to_login' => 'Back to login',
+    'reset_code' => 'Reset Code',
+    'new_password' => 'New Password',
+    'forgot_password_email_sent' => 'If the email exists, a reset code has been sent.',
+    'invalid_reset_code' => 'Invalid or expired reset code.',
+    'password_changed_successfully' => 'Your password has been changed successfully.',
+
     // Auth - Logout confirmation
     'confirm_logout' => 'Confirm logout',
     'confirm_logout_message' => 'Are you sure you want to log out of your account?',
@@ -146,4 +158,21 @@ return [
     // Helpers
     'helper_email_privacy' => "We’ll never share your details. Read our",
     'privacy_policy' => 'Privacy Policy',
+
+    // Emails (Markdown)
+    'email_subject_forgot_password' => 'Your password reset code',
+    'email_subject_password_changed' => 'Your password was changed',
+    'email_forgot_password_title' => 'Reset your password',
+    'email_forgot_password_intro' => 'Use the code below to change your password.',
+    'email_forgot_password_your_code' => 'Your reset code',
+    'email_forgot_password_expires' => 'This code expires in :minutes minutes.',
+    'email_forgot_password_button' => 'Change Password',
+    'email_forgot_password_outro' => 'If you did not request a password reset, you can safely ignore this email.',
+
+    'email_password_changed_title' => 'Password changed',
+    'email_password_changed_intro' => 'Your account password has just been changed.',
+    'email_password_changed_security_tip' => 'If this was not you, please contact support immediately.',
+
+    // Generic email errors
+    'email_send_failed' => 'Unable to send email at this time.',
 ];
