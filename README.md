@@ -1,61 +1,101 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# QuickPanel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+QuickPanel is a modern admin panel starter built on the TALL stack (Tailwind CSS, Alpine.js, Laravel, Livewire). It ships with authentication, authorization, localization, beautiful datagrids, modals/toasts, and developer tooling to help you start building dashboards and back-office applications quickly.
 
-## About Laravel
+## Tech Stack
+- PHP ^8.2, Laravel ^12
+- Livewire ^3 (SPA-like interactions without heavy JS)
+- Tailwind CSS + Vite
+- Alpine.js
+- Spatie Laravel Permission ^6 (roles/permissions)
+- PowerGrid ^6 (tables, filters, export)
+- Livewire Modal (elegantly/livewire-modal)
+- Livewire Toaster (masmerise/livewire-toaster)
+- Localization: mcamara/laravel-localization, laravel-lang/common
+- Social login: laravel/socialite
+- Log management: opcodesio/log-viewer
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Requirements
+- PHP 8.2+
+- Composer
+- Node.js 18+ (20+ recommended) and npm
+- A database (MySQL/MariaDB/PostgreSQL/SQLite). SQLite works out of the box in dev.
+- Redis (optional) for queues/caching
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Getting Started
+1) Clone and install dependencies
+- git clone <your-repo-url> quickpanel
+- cd quickpanel
+- composer install
+- npm install
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2) Environment
+- cp .env.example .env (on Windows: copy .env.example .env)
+- Set DB connection in .env (or use SQLite by setting DB_CONNECTION=sqlite)
+- Set APP_NAME, APP_URL (for example http://localhost:8000), MAIL_ settings for email verification
 
-## Learning Laravel
+3) App key and database
+- php artisan key:generate
+- If using SQLite, ensure database/database.sqlite exists (create an empty file)
+- php artisan migrate
+- (Optional) php artisan db:seed if you add seeders for roles/users
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+4) Run the app (two options)
+- Separate terminals:
+  - php artisan serve
+  - php artisan queue:listen --tries=1
+  - npm run dev
+- Or one command using Composer script:
+  - composer run dev
+  This uses npx concurrently to run server, queue listener, and Vite.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Open http://localhost:8000 (or your APP_URL).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Features at a Glance
+- Authentication with email verification (Livewire components under resources/views/livewire/auth)
+- User dashboard and settings (including password change)
+- Role/Permission integration via Spatie Permission
+- DataTables/Grids via PowerGrid (filters, export, actions)
+- Modals and toast notifications for great UX
+- Multi-language and locale-aware routes via Laravel Localization
+- Optional social authentication via Socialite
+- Log Viewer at /log-viewer (guard as needed)
 
-## Laravel Sponsors
+## Configuration Notes
+- Queues: The development script uses queue:listen. For production, use a supervisor with queue:work.
+- Localization:
+  - mcamara/laravel-localization adds localized routes. Configure locales in config/laravellocalization.php.
+  - laravel-lang/common provides language lines. Your custom lines are under lang/<locale>/quickpanel.php
+- Permissions:
+  - After defining roles/permissions, consider seeding them and calling php artisan permission:cache-reset when changing them.
+- Socialite: Add provider credentials to .env (e.g., GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, GITHUB_REDIRECT_URL) and wire up controllers/routes.
+- Log Viewer: opcodesio/log-viewer exposes a UI to browse logs. Protect the route in production.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Scripts
+- composer run dev: Runs PHP server, queue listener, and Vite together.
+- composer test: Clears config and runs test suite.
+- npm run dev: Vite dev server.
+- npm run build: Production assets build.
 
-### Premium Partners
+## Testing
+- php artisan test
+- or composer test
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Troubleshooting
+- Vite HMR issues: Ensure APP_URL matches the URL you use and that npm run dev is running. If behind proxies, set ASSET_URL.
+- Email verification: Configure MAIL_MAILER, MAIL_HOST, MAIL_USERNAME, etc. For local dev, use Mailpit or log mailer.
+- Queue not processing: Ensure queue:listen/queue:work is running and QUEUE_CONNECTION is set (database or redis).
+- Permission changes not taking effect: php artisan permission:cache-reset
+- Windows path issues: Use backslashes in system paths; Laravel handles URLs with forward slashes.
 
-## Contributing
+## Directory Hints
+- Livewire components: app/Livewire and resources/views/livewire
+- Layouts: resources/views/layouts
+- Language files: lang/
+- Routes: routes/
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Security & Contributions
+Please open issues or PRs in this repository. For security concerns, contact the maintainer privately and avoid filing public issues with exploit details.
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MIT License. See LICENSE file if present; otherwise assume MIT per composer.json.
