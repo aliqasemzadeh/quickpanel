@@ -178,4 +178,35 @@ return [
     // Generic email errors
     'email_send_failed' => 'Unable to send email at this time.',
     'profile' => 'Profile',
+
+    // Email Verification (VerifyEmail)
+    'verify_email_title' => 'Verify your new email',
+    'verify_email_intro' => 'Enter the 6 digit code we sent to your new email address, or use the verification link in the email.',
+    'verify_email_helper' => 'Please enter the 6 digit code we sent via email.',
+    'verify' => 'Verify',
+    'resend_code' => 'Resend code',
+    'first_code' => 'First code',
+    'second_code' => 'Second code',
+    'third_code' => 'Third code',
+    'fourth_code' => 'Fourth code',
+    'fifth_code' => 'Fifth code',
+    'sixth_code' => 'Sixth code',
+
+    // Email verification messages
+    'verification_link_invalid' => 'Invalid or expired verification link.',
+    'verification_code_required' => 'Please enter the 6-digit code.',
+    'not_authenticated' => 'Not authenticated.',
+    'verification_not_found' => 'No pending email verification found or it has expired.',
+    'verification_code_expired' => 'Verification code expired. Please resend.',
+    'verification_code_invalid' => 'Invalid verification code.',
+    'verification_nothing_to_resend' => 'Nothing to resend. Please start over.',
+    'verification_email_resend_failed' => 'Unable to resend verification email.',
+    'verification_email_resent' => 'Verification email resent.',
+    'verification_link_session_mismatch' => 'This verification link does not match your session. Please log in.',
+    'verification_token_invalid' => 'Invalid verification token.',
+    'verification_link_expired' => 'Verification link expired.',
+    'pending_email_missing' => 'Pending email is missing.',
+    'email_verified_and_updated' => 'Your email has been verified and updated.',
+    'verification_email_send_failed' => 'Unable to send verification email.',
+    'verification_email_sent' => 'We sent a verification code and link to your new email. Please verify to complete the change.',
 ];

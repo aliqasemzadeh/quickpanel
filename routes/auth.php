@@ -8,6 +8,7 @@ Route::get('/logout', \App\Livewire\Auth\Logout::class)->name('logout');
 Route::get('/register', \App\Livewire\Auth\Register::class)->name('register');
 Route::get('/forget-password', \App\Livewire\Auth\ForgetPassword::class)->name('forget-password');
 Route::get('/change-password', \App\Livewire\Auth\ChangePassword::class)->name('change-password');
+Route::get('/verify-email', \App\Livewire\Auth\VerifyEmail::class)->name('verify-email');
 
 Route::get('/auth/google/redirect', [\App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle'])->name('auth.google.redirect');
 Route::any('/auth/google/callback', [\App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');

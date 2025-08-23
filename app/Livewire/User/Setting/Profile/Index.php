@@ -2,9 +2,14 @@
 
 namespace App\Livewire\User\Setting\Profile;
 
+use App\Mail\VerifyNewEmail;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\URL;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Masmerise\Toaster\Toaster;
@@ -64,17 +69,56 @@ class Index extends Component
             return;
         }
 
-        // If email changed, you may want to reset verification. Keeping simple unless required.
         $emailChanged = $validated['email'] !== $user->email;
 
+        // Always allow name change
         $user->name = $validated['name'];
-        $user->email = $validated['email'];
 
-        // Optionally: if ($emailChanged) { $user->email_verified_at = null; }
+        if (! $emailChanged) {
+            // No email change, just save
+            $user->save();
+            Toaster::success(__('quickpanel.updated_at') ?? __('quickpanel.update') ?? 'Updated');
+            return;
+        }
 
+        // Email changed: do NOT change it yet. Initiate verification flow.
+        // Persist a pending verification package in cache to avoid schema changes (minimal change approach).
+        $code = (string) str_pad((string) random_int(0, 999999), 6, '0', STR_PAD_LEFT);
+        $token = (string) Str::uuid();
+        $ttlMinutes = 30;
+        $cacheKey = self::verificationCacheKey($user->id);
+
+        $payload = [
+            'new_email' => $validated['email'],
+            'code' => $code,
+            'token' => $token,
+            'expires_at' => now()->addMinutes($ttlMinutes)->timestamp,
+        ];
+        Cache::put($cacheKey, $payload, now()->addMinutes($ttlMinutes));
+
+        // Generate a temporary signed route for link verification
+        $signedUrl = URL::temporarySignedRoute('verify-email', now()->addMinutes($ttlMinutes), [
+            'token' => $token,
+            'uid' => $user->id,
+        ]);
+
+        try {
+            Mail::to($validated['email'])->send(new VerifyNewEmail($user->name, $code, $signedUrl));
+        } catch (\Throwable $e) {
+            Toaster::error(__('quickpanel.verification_email_send_failed'));
+            return;
+        }
+
+        // Save only the name change for now
         $user->save();
 
-        Toaster::success(__('quickpanel.updated_at') ?? __('quickpanel.update') ?? 'Updated');
+        Toaster::success(__('quickpanel.verification_email_sent'));
+        redirect()->route('verify-email')->send();
+    }
+
+    public static function verificationCacheKey(int $userId): string
+    {
+        return 'email_verification:user:' . $userId;
     }
 
     public function openDeleteModal(): void
