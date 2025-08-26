@@ -9,6 +9,8 @@
     @livewireStyles
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
+
+<!-- Header -->
 <header>
     <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
@@ -23,7 +25,8 @@
         </div>
     </nav>
 </header>
-<!-- Main content -->
+
+<!-- Main -->
 <main>
     <section class="bg-gray-50 dark:bg-gray-900">
         <div class="mx-auto grid h-screen max-w-screen-xl  px-4 py-2.5">
@@ -36,7 +39,7 @@
     </section>
 </main>
 
-
+<!-- Bottom Navigation -->
 <div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
     <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
         <button type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
@@ -67,6 +70,7 @@
     </div>
 </div>
 
+<!-- Footer -->
 <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
     <div class="mx-auto max-w-screen-xl text-center">
         <a href="{{ route('home') }}" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
