@@ -20,5 +20,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/logout', \App\Livewire\Auth\Logout::class)->name('logout');
     Route::get('/change-password', \App\Livewire\Auth\ChangePassword::class)->name('change-password');
     Route::get('/verify-email', \App\Livewire\Auth\VerifyEmail::class)->name('verify-email');
-
 });
