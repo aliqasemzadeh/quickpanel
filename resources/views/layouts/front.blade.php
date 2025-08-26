@@ -26,7 +26,7 @@
 <!-- Main content -->
 <main>
     <section class="bg-gray-50 dark:bg-gray-900">
-        <div class="mx-auto grid h-screen max-w-screen-xl px-4 py-8">
+        <div class="mx-auto grid h-screen max-w-screen-xl  px-4 py-2.5">
             <div class="w-full place-self-center">
                 <div class="mx-auto max-w-lg rounded-lg bg-white p-4 shadow-sm dark:bg-gray-800 sm:p-6">
                     {{ $slot }}
