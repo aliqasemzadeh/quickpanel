@@ -152,6 +152,7 @@ return [
     'remove' => 'Remove',
     'close' => 'Close',
     'functions' => 'Functions',
+    'admin_panel' => 'Admin Panel',
 
     // General
     'added' => 'Added',
