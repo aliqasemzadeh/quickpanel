@@ -1,6 +1,6 @@
 <x-livewire-modal::stack>
     <x-livewire-modal::slideover
-        position="right"
+        position="{{ config('quickpanel.slideover_direction')  }}"
         class="w-full max-w-md overflow-auto rounded-lg bg-white dark:bg-gray-800 p-5"
     >
         <div class="flex flex-row items-center gap-2 mb-4">
