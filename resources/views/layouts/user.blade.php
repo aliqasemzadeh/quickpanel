@@ -115,7 +115,7 @@
                             <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                             <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                         </svg>
-                        <span class="ml-3">{{ __('quickpanel.dashboard') }}</span>
+                        <span class="ms-3">{{ __('quickpanel.dashboard') }}</span>
                     </a>
                 </li>
                 <li>
@@ -129,7 +129,7 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M20 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6h-2m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4"/>
                         </svg>
 
-                        <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                        <span class="flex-1 ms-3 text-start whitespace-nowrap"
                         >{{ __('quickpanel.settings') }}</span
                         >
                         <svg
@@ -150,14 +150,14 @@
                         <li>
                             <a
                                 href="{{ route('user.setting.profile.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('user.setting.profile.index') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('user.setting.profile.index') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.profile') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('user.setting.password.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('user.setting.password.index') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('user.setting.password.index') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.change_password') }}</a
                             >
                         </li>
