@@ -3,6 +3,7 @@
 namespace App\Console\Commands\System\Administrator;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\App;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -27,6 +28,7 @@ class CreatePermissionsCommand extends Command
      */
     public function handle()
     {
+        App::setLocale('en');
         $user = Role::findByName('user');
         $permissions_user = __('permissions.user');
 

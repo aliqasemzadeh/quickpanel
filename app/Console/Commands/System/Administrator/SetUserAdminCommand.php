@@ -4,6 +4,7 @@ namespace App\Console\Commands\System\Administrator;
 
 use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\App;
 
 class SetUserAdminCommand extends Command
 {
@@ -26,6 +27,7 @@ class SetUserAdminCommand extends Command
      */
     public function handle()
     {
+        App::setLocale('en');
         $userId = $this->ask('UserId');
         try {
             $user = User::findOrFail($userId);

@@ -3,6 +3,7 @@
 namespace App\Console\Commands\System\Administrator;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Spatie\Permission\Models\Permission;
@@ -29,6 +30,7 @@ class CreateRolesCommand extends Command
      */
     public function handle()
     {
+        App::setLocale('en');
         Schema::disableForeignKeyConstraints();
         Role::truncate();
         Permission::truncate();

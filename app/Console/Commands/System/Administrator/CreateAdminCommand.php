@@ -4,6 +4,7 @@ namespace App\Console\Commands\System\Administrator;
 
 use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\App;
 
 class CreateAdminCommand extends Command
 {
@@ -26,6 +27,7 @@ class CreateAdminCommand extends Command
      */
     public function handle()
     {
+        App::setLocale('en');
         $name = $this->ask('Full Name');
         $email = $this->ask('EMail');
         $password = $this->secret('Password');
