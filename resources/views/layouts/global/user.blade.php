@@ -18,11 +18,12 @@
     data-dropdown-toggle="dropdown"
 >
     <span class="sr-only">Open user menu</span>
-    <img
-        class="w-8 h-8 rounded-full"
-        src="{{ auth()->user()->avatar }}"
-        alt="user photo"
-    />
+    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-700 text-gray-300">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M20 21a8 8 0 1 0-16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </span>
 </button>
 <!-- Dropdown menu -->
 <div
