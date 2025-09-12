@@ -1,8 +1,6 @@
 <?php
 return [
     'direction' => "ltr",
-
-    // Auth - Login
     'login_google' => 'Sign in with Google',
     'login_github' => 'Sign in with GitHub',
     'or' => 'Or',
@@ -13,8 +11,6 @@ return [
     'email_placeholder' => 'Email address',
     'password_placeholder' => 'Password',
     'login' => 'Login',
-
-    // Auth - Forgot/Change Password
     'forgot_password_title' => 'Forgot Password',
     'send_reset_code' => 'Send Reset Code',
     'already_have_code' => 'Already have a code? Change password',
@@ -27,8 +23,6 @@ return [
     'password_changed_successfully' => 'Your password has been changed successfully.',
     'invalid_current_password' => 'Your current password is incorrect.',
     'password_same_as_old' => 'New password cannot be the same as the current password.',
-
-    // Auth - Logout confirmation
     'confirm_logout' => 'Confirm logout',
     'confirm_logout_message' => 'Are you sure you want to log out of your account?',
     'yes_log_me_out' => 'Yes, log me out',
@@ -42,13 +36,13 @@ return [
     'user_management' => 'User Management',
     'user_created' => 'User Created.',
     'user_edited' => 'User Edited.',
-        'user_deleted' => 'User Deleted.',
-        'permission_created' => 'Permission Created.',
-        'permission_edited' => 'Permission Edited.',
-        'permission_deleted' => 'Permission Deleted.',
-            'role_created' => 'Role Created.',
-            'role_edited' => 'Role Edited.',
-            'role_deleted' => 'Role Deleted.',
+    'user_deleted' => 'User Deleted.',
+    'permission_created' => 'Permission Created.',
+    'permission_edited' => 'Permission Edited.',
+    'permission_deleted' => 'Permission Deleted.',
+    'role_created' => 'Role Created.',
+    'role_edited' => 'Role Edited.',
+    'role_deleted' => 'Role Deleted.',
     'user' => 'User',
     'create_user' => 'Create User',
     'create_user_description' => 'Create a new user with the form below.',
@@ -153,16 +147,8 @@ return [
     'close' => 'Close',
     'functions' => 'Functions',
     'admin_panel' => 'Admin Panel',
-
-    // General
     'added' => 'Added',
     'not_translated' => 'Not translated',
-
-    // Helpers
-    'helper_email_privacy' => '',
-    'privacy_policy' => 'Privacy Policy',
-
-    // Emails (Markdown)
     'email_subject_forgot_password' => 'Your password reset code',
     'email_subject_password_changed' => 'Your password was changed',
     'email_forgot_password_title' => 'Reset your password',
@@ -171,16 +157,11 @@ return [
     'email_forgot_password_expires' => 'This code expires in :minutes minutes.',
     'email_forgot_password_button' => 'Change Password',
     'email_forgot_password_outro' => 'If you did not request a password reset, you can safely ignore this email.',
-
     'email_password_changed_title' => 'Password changed',
     'email_password_changed_intro' => 'Your account password has just been changed.',
     'email_password_changed_security_tip' => 'If this was not you, please contact support immediately.',
-
-    // Generic email errors
     'email_send_failed' => 'Unable to send email at this time.',
     'profile' => 'Profile',
-
-    // Email Verification (VerifyEmail)
     'verify_email_title' => 'Verify your new email',
     'verify_email_intro' => 'Enter the 6 digit code we sent to your new email address, or use the verification link in the email.',
     'verify_email_helper' => 'Please enter the 6 digit code we sent via email.',
@@ -193,7 +174,6 @@ return [
     'fifth_code' => 'Fifth code',
     'sixth_code' => 'Sixth code',
 
-    // Email verification messages
     'verification_link_invalid' => 'Invalid or expired verification link.',
     'verification_code_required' => 'Please enter the 6-digit code.',
     'not_authenticated' => 'Not authenticated.',
@@ -210,4 +190,5 @@ return [
     'email_verified_and_updated' => 'Your email has been verified and updated.',
     'verification_email_send_failed' => 'Unable to send verification email.',
     'verification_email_sent' => 'We sent a verification code and link to your new email. Please verify to complete the change.',
+    'permissions_updated' => 'Permissions updated.',
 ];

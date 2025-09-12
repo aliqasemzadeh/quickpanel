@@ -9,14 +9,13 @@
             type="email"
             wire:model="email"
             id="email"
-            class="block w-full rounded-lg border bg-gray-50 p-2.5 text-gray-900 focus:border-primary-600 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm @error('email') border-red-500 focus:border-red-500 focus:ring-red-500 @enderror"
+            class="block w-full rounded-lg border bg-gray-50 p-2.5 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm @error('email') border-red-500 focus:border-red-500 focus:ring-red-500 @enderror"
             placeholder="{{ __('quickpanel.email_placeholder') }}"
             required
         />
         @error('email')
         <p class="mt-1 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
         @enderror
-        <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">{{ __('quickpanel.helper_email_privacy') }} <a href="#" class="underline">{{ __('quickpanel.privacy_policy') }}</a>.</p>
     </div>
 
     <div class="flex flex-col items-center justify-center gap-2">
