@@ -194,5 +194,5 @@ return [
     'current_password' => 'رمز عبور فعلی',
     'delete_account' => 'حذف اشتراک',
     'delete_account_is_irreversible' => 'این اقدام غیر قابل برگشت است. همه اطلاعات حذف خواهد شد.',
-    'confirm_password_to_delete_account' => '',
+    'confirm_password_to_delete_account' => 'برای حذف اشتراک رمز عبور خود را وارد کنید.',
 ];

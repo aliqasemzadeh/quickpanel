@@ -39,7 +39,7 @@
         <!-- Delete Account Card -->
         <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{{ __('quickpanel.delete_account') }}</h2>
-            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">This action is irreversible. All your data will be permanently deleted.</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">{{ __('quickpanel.delete_account_is_irreversible') }}</p>
             <button type="button" wire:click="openDeleteModal" class="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
                 {{ __('quickpanel.delete') }}
             </button>
@@ -55,7 +55,7 @@
             <div class="relative bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-md mx-4">
                 <div class="p-6">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{{ __('quickpanel.are_you_sure') }}</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Please confirm your current password to delete your account.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">{{ __('quickpanel.confirm_password_to_delete_account') }}</p>
 
                     <div class="mb-4">
                         <label for="delete_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.password') }} ({{ __('quickpanel.current_password') }})</label>
