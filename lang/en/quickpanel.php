@@ -191,4 +191,8 @@ return [
     'verification_email_send_failed' => 'Unable to send verification email.',
     'verification_email_sent' => 'We sent a verification code and link to your new email. Please verify to complete the change.',
     'permissions_updated' => 'Permissions updated.',
+    'current_password' => 'Current Password',
+    'delete_account' => 'Delete Account',
+    'delete_account_is_irreversible' => 'This action is irreversible. All your data will be permanently deleted.',
+    'confirm_password_to_delete_account' => 'Please confirm your current password to delete your account.',
 ];

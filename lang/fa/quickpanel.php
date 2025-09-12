@@ -191,4 +191,8 @@ return [
     'verification_email_send_failed' => 'امکان ارسال ایمیل تایید وجود ندارد.',
     'verification_email_sent' => 'کد و لینک تایید به ایمیل جدید شما ارسال شد. لطفاً برای تکمیل تغییر، تایید کنید.',
     'permissions_updated' => 'مجوزها به‌روزرسانی شدند.',
+    'current_password' => 'رمز عبور فعلی',
+    'delete_account' => 'حذف اشتراک',
+    'delete_account_is_irreversible' => 'این اقدام غیر قابل برگشت است. همه اطلاعات حذف خواهد شد.',
+    'confirm_password_to_delete_account' => '',
 ];

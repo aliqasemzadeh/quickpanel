@@ -1,3 +1,6 @@
+<x-slot name="title">
+    {{ __('quickpanel.profile') }}
+</x-slot>
 <div>
     <div class="mx-auto max-w-xl space-y-6">
         <!-- Update Profile Card -->
@@ -35,7 +38,7 @@
 
         <!-- Delete Account Card -->
         <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
-            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Delete Account</h2>
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{{ __('quickpanel.delete_account') }}</h2>
             <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">This action is irreversible. All your data will be permanently deleted.</p>
             <button type="button" wire:click="openDeleteModal" class="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
                 {{ __('quickpanel.delete') }}
@@ -55,7 +58,7 @@
                     <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">Please confirm your current password to delete your account.</p>
 
                     <div class="mb-4">
-                        <label for="delete_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.password') }} (Current)</label>
+                        <label for="delete_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.password') }} ({{ __('quickpanel.current_password') }})</label>
                         <input type="password" id="delete_password" wire:model.defer="delete_password" autocomplete="current-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
                         @error('delete_password')
                             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
