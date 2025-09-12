@@ -10,7 +10,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/setting/password/index', App\Livewire\User\Setting\Password\Index::class)->name('user.setting.password.index');
 
 
-    Route::group(['middleware' => ['role:administrator']], function () {
+    Route::group(['middleware' => [\App\Http\Middleware\AdministratorAccessMiddleware::class]], function () {
         Route::get('/administrator/dashboard/index', App\Livewire\Administrator\Dashboard\Index::class)->name('administrator.dashboard.index');
         Route::get('/administrator/user-management/user/index', App\Livewire\Administrator\UserManagement\User\Index::class)->name('administrator.user-management.user.index');
         Route::get('/administrator/user-management/role/index', App\Livewire\Administrator\UserManagement\Role\Index::class)->name('administrator.user-management.role.index');
