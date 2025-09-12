@@ -75,7 +75,7 @@
                 <label for="sidebar-search" class="sr-only">Search</label>
                 <div class="relative">
                     <div
-                        class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+                        class="flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none"
                     >
                         <svg
                             class="w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -115,7 +115,7 @@
                             <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                             <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                         </svg>
-                        <span class="ml-3">{{ __('quickpanel.dashboard') }}</span>
+                        <span class="ms-3">{{ __('quickpanel.dashboard') }}</span>
                     </a>
                 </li>
                 <li>
@@ -129,7 +129,7 @@
                             <path fill-rule="evenodd" d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.82-3.096a5.51 5.51 0 0 0-2.797-6.293 3.5 3.5 0 1 1 2.796 6.292ZM19.5 18h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1a5.503 5.503 0 0 1-.471.762A5.998 5.998 0 0 1 19.5 18ZM4 7.5a3.5 3.5 0 0 1 5.477-2.889 5.5 5.5 0 0 0-2.796 6.293A3.501 3.501 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4 2 2 0 0 0 2 2h.5a5.998 5.998 0 0 1 3.071-5.238A5.505 5.505 0 0 1 7.1 12Z" clip-rule="evenodd"/>
                         </svg>
 
-                        <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                        <span class="flex-1 ms-3 text-start whitespace-nowrap"
                         >{{ __('quickpanel.user_management') }}</span
                         >
                         <svg
@@ -150,21 +150,21 @@
                         <li>
                             <a
                                 href="{{ route('administrator.user-management.user.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.user.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.user.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.users') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('administrator.user-management.role.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.role.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.role.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.roles') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('administrator.user-management.permission.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.permission.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.permission.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.permissions') }}</a
                             >
                         </li>
@@ -181,7 +181,7 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M20 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6h-2m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4"/>
                         </svg>
 
-                        <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                        <span class="flex-1 ms-3 text-start whitespace-nowrap"
                         >{{ __('quickpanel.setting_management') }}</span
                         >
                         <svg
@@ -202,14 +202,14 @@
                         <li>
                             <a
                                 href="{{ route('administrator.setting-management.option.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.setting-management.option.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.setting-management.option.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.options') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('administrator.setting-management.function.index') }}"
-                                class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.setting-management.function.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
+                                class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.setting-management.function.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
                             >{{ __('quickpanel.functions') }}</a
                             >
                         </li>

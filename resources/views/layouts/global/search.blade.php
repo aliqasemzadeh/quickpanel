@@ -1,8 +1,8 @@
-<form action="#" method="GET" class="hidden md:block md:pl-2">
+<form action="#" method="GET" class="hidden md:block md:ps-2">
     <label for="topbar-search" class="sr-only">Search</label>
     <div class="relative md:w-64 md:w-96">
         <div
-            class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+            class="flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none"
         >
             <svg
                 class="w-5 h-5 text-gray-500 dark:text-gray-400"
