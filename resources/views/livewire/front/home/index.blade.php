@@ -1,6 +1,6 @@
 <x-slot name="title">
     {{ __('quickpanel.home') }}
 </x-slot>
-<div>
-    {{-- The best athlete wants his opponent at his best. --}}
+<div class="mx-auto rounded-lg bg-white p-4 shadow-sm dark:bg-gray-800 sm:p-6">
+    Hello World
 </div>
