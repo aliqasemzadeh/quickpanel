@@ -195,4 +195,6 @@ return [
     'delete_account' => 'Delete Account',
     'delete_account_is_irreversible' => 'This action is irreversible. All your data will be permanently deleted.',
     'confirm_password_to_delete_account' => 'Please confirm your current password to delete your account.',
+    'permission_assigned' => 'Permission Assigned.',
+    'permission_revoked' => 'Permission Revoked.',
 ];

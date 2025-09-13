@@ -6,6 +6,7 @@ use App\Models\User;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Masmerise\Toaster\Toaster;
 use Spatie\Permission\Models\Permission;
 
 class Permissions extends Component
@@ -13,13 +14,10 @@ class Permissions extends Component
     use WithPagination;
     public User $user;
     public $search;
-    public bool $open = false;
 
-    #[On('administrator.user-management.user.permissions.assign-data')]
-    public function assignData($id): void
+    public function mount($userId): void
     {
-        $this->user = User::findOrFail($id);
-        $this->open = true;
+        $this->user = User::findOrFail($userId);
     }
 
     public function close(): void
@@ -34,6 +32,7 @@ class Permissions extends Component
         }
         $this->user->givePermissionTo($permission->name);
         $this->dispatch('administrator.user-management.user.permissions');
+        Toaster::success( __('quickpanel.permission_assigned'));
     }
 
     public function delete(Permission $permission): void
@@ -43,6 +42,7 @@ class Permissions extends Component
         }
         $this->user->revokePermissionTo($permission->name);
         $this->dispatch('administrator.user-management.user.permissions');
+        Toaster::success( __('quickpanel.permission_revoked'));
     }
 
     #[On('administrator.user-management.user.permissions.render')]

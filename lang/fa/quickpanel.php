@@ -195,4 +195,6 @@ return [
     'delete_account' => 'حذف اشتراک',
     'delete_account_is_irreversible' => 'این اقدام غیر قابل برگشت است. همه اطلاعات حذف خواهد شد.',
     'confirm_password_to_delete_account' => 'برای حذف اشتراک رمز عبور خود را وارد کنید.',
+    'permission_assigned' => 'دسترسی تخصیص داده شد.',
+    'permission_revoked' => 'دسترسی گرفته شد.',
 ];
