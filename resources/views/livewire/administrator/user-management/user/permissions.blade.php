@@ -47,9 +47,9 @@
                                         <div>
                                             <p class="text-sm font-medium text-gray-900 dark:text-white">{{ $permission->name }}</p>
                                         </div>
-                                        <button type="button" class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800" wire:click="delete({{ $permission->id }})" onclick="return confirm('{{ __('quickpanel.are_you_sure') }}')">
+                                        <button type="button" class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800" wire:click="revoke({{ $permission->id }})" onclick="return confirm('{{ __('quickpanel.are_you_sure') }}')">
                                             <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22M8 7V5a3 3 0 013-3h2a3 3 0 013 3v2" /></svg>
-                                            {{ __('quickpanel.remove') }}
+                                            {{ __('quickpanel.revoke') }}
                                         </button>
                                     </div>
                                 </li>

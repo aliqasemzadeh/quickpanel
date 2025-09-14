@@ -30,7 +30,7 @@ class Permissions extends Component
         Toaster::success( __('quickpanel.permission_assigned'));
     }
 
-    public function delete(Permission $permission): void
+    public function revoke(Permission $permission): void
     {
         if (!isset($this->user)) {
             return;

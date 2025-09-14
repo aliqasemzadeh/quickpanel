@@ -197,4 +197,5 @@ return [
     'confirm_password_to_delete_account' => 'Please confirm your current password to delete your account.',
     'permission_assigned' => 'Permission Assigned.',
     'permission_revoked' => 'Permission Revoked.',
+    'revoke' => 'Revoke',
 ];
