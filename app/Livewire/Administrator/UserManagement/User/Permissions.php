@@ -20,11 +20,6 @@ class Permissions extends Component
         $this->user = User::findOrFail($userId);
     }
 
-    public function close(): void
-    {
-        $this->open = false;
-    }
-
     public function assign(Permission $permission)
     {
         if (!isset($this->user)) {
