@@ -53,6 +53,22 @@
             @enderror
         </div>
     </div>
+    <div class="">
+            <label for="captcha" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="relative">
+                <input
+                    type="text"
+                    id="captcha"
+                    class="block w-full  text-sm font-medium text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="{{ __('quickpanel.captcha') }}"
+                    wire:model="captcha"
+                    required />
+                <img src="{{ captcha_src() }}" class="text-white absolute end-3 bottom-0.5 font-medium rounded-lg text-sm"  alt="captcha" />
+                @error('captcha')
+                <p class="mt-1 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+    </div>
     <div class="flex items-center justify-between">
         <div class="flex items-center">
             <input

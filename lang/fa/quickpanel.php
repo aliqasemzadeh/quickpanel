@@ -198,4 +198,5 @@ return [
     'permission_assigned' => 'دسترسی اختصاص داده شد.',
     'permission_revoked' => 'دسترسی لغو شد.',
     'revoke' => 'لغو',
+    'captcha' => 'کلمه تصادفی',
 ];

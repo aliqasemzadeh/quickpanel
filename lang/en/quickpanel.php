@@ -198,4 +198,5 @@ return [
     'permission_assigned' => 'Permission Assigned.',
     'permission_revoked' => 'Permission Revoked.',
     'revoke' => 'Revoke',
+    'captcha' => 'Captcha',
 ];

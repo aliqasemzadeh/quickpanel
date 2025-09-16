@@ -11,6 +11,7 @@ class Login extends Component
 {
     public string $email = '';
     public string $password = '';
+    public string $captcha = '';
     public bool $remember = false;
 
     protected function rules(): array
@@ -18,6 +19,7 @@ class Login extends Component
         return [
             'email' => ['required', 'email'],
             'password' => ['required', 'string'],
+            'captcha' => ['required', 'string', 'captcha'],
             'remember' => ['boolean'],
         ];
     }
