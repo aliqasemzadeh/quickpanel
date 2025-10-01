@@ -8,7 +8,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/setting/profile/index', QuickPanel\Platform\Livewire\User\Setting\Profile\Index::class)->name('user.setting.profile.index');
     Route::get('/user/setting/password/index', QuickPanel\Platform\Livewire\User\Setting\Password\Index::class)->name('user.setting.password.index');
 
-
     Route::group(['middleware' => [\QuickPanel\Platform\Http\Middleware\AdministratorAccessMiddleware::class]], function () {
         Route::get('/administrator/dashboard/index', QuickPanel\Platform\Livewire\Administrator\Dashboard\Index::class)->name('administrator.dashboard.index');
         Route::get('/administrator/user-management/admin/index', QuickPanel\Platform\Livewire\Administrator\UserManagement\Admin\Index::class)->name('administrator.user-management.admin.index');

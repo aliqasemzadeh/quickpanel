@@ -11,7 +11,6 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/auth/github/redirect', [\App\Http\Controllers\Auth\GithubController::class, 'redirectToGithub'])->name('auth.github.redirect');
     Route::any('/auth/github/callback', [\App\Http\Controllers\Auth\GithubController::class, 'handleGithubCallback'])->name('auth.github.callback');
-
 });
 
 Route::middleware('auth')->group(function () {
