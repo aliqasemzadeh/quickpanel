@@ -3,6 +3,7 @@
 namespace QuickPanel\Platform;
 
 use Illuminate\Support\ServiceProvider;
+use QuickPanel\Platform\Commands\Install\QuickPanelPlatformSetup;
 
 class QuickPanelPlatformServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,18 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
 
         // Translations
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'platform');
+
+        // Register console commands
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                QuickPanelPlatformSetup::class,
+            ]);
+        }
+
+        // Migrations
+        $this->publishesMigrations([
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ]);
 
         // Publishes the config file
         $this->publishes([

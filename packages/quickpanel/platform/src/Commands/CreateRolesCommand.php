@@ -1,6 +1,6 @@
 <?php
 
-namespace QuickPanel\Platform\Commands\Administrator;
+namespace QuickPanel\Platform\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\App;
@@ -16,7 +16,7 @@ class CreateRolesCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'platform::system:administrator:create-roles-command';
+    protected $signature = 'platform::create-roles-command';
 
     /**
      * The console command description.

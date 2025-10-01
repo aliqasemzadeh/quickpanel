@@ -1,6 +1,6 @@
 <?php
 
-namespace QuickPanel\Platform\Commands\Administrator;
+namespace QuickPanel\Platform\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\App;
@@ -14,7 +14,7 @@ class CreatePermissionsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'platform::system:administrator:create-permissions-command';
+    protected $signature = 'platform::create-permissions-command';
 
     /**
      * The console command description.
