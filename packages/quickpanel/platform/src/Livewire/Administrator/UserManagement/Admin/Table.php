@@ -112,7 +112,7 @@ final class Table extends PowerGridComponent
                 ->slot(__('platform::common.edit'))
                 ->id()
                 ->class('px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800')
-                ->dispatch('modal-open', ['component' => 'administrator.user-management.admin.edit', 'props' => ['adminId' => $row->id]]),
+                ->dispatch('modal-open', ['component' => 'platform.administrator.user-management.admin.edit', 'props' => ['adminId' => $row->id]]),
 
             // Added: Roles button with extra-small styling
             Button::add('roles')
