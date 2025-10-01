@@ -23,6 +23,8 @@
         "masmerise/livewire-toaster": "^2.8",
         "opcodesio/log-viewer": "^3.19",
         "power-components/livewire-powergrid": "^6.6",
+        "laravel/socialite": "^5.23",
+        "mews/captcha": "^3.4",
         "spatie/laravel-permission": "^6.21"
     },
     "extra": {

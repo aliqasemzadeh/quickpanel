@@ -5981,13 +5981,15 @@
             "dist": {
                 "type": "path",
                 "url": "packages/quickpanel/platform",
-                "reference": "536e3b81da53ea9a0f28c311d2365656b78dfb91"
+                "reference": "e23a3d8cf94706c257064f42e3695a9166084dfe"
             },
             "require": {
                 "elegantly/livewire-modal": "^1.0",
                 "illuminate/support": "^12.32",
+                "laravel/socialite": "^5.23",
                 "livewire/livewire": "^3.6",
                 "masmerise/livewire-toaster": "^2.8",
+                "mews/captcha": "^3.4",
                 "opcodesio/log-viewer": "^3.19",
                 "php": "^8.3",
                 "power-components/livewire-powergrid": "^6.6",
