@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Http\Middleware;
+namespace QuickPanel\Platform\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Mail;
+namespace QuickPanel\Platform\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;

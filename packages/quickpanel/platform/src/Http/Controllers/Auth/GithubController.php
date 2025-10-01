@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Http\Controllers\Auth;
+namespace QuickPanel\Platform\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\OAuthWelcomeMail;

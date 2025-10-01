@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Livewire\Administrator\UserManagement\Permission;
+namespace QuickPanel\Platform\Livewire\Administrator\UserManagement\Permission;
 
 use Livewire\Component;
 use Masmerise\Toaster\Toaster;

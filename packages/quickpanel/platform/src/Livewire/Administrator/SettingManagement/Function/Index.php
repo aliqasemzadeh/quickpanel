@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Livewire\Administrator\SettingManagement\Function;
+namespace QuickPanel\Platform\Livewire\Administrator\SettingManagement\Function;
 
 use Illuminate\Support\Facades\Artisan;
 use Livewire\Attributes\Layout;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Livewire\Administrator\UserManagement\User;
+namespace QuickPanel\Platform\Livewire\Administrator\UserManagement\User;
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;

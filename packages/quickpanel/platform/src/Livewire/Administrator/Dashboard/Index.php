@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Livewire\Administrator\Dashboard;
+namespace QuickPanel\Platform\Livewire\Administrator\Dashboard;
 
 use Livewire\Attributes\Layout;
 use Livewire\Component;

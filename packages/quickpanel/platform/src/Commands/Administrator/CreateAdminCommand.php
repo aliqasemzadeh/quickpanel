@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Commands\Administrator;
+namespace QuickPanel\Platform\Commands\Administrator;
 
 use App\Models\User;
 use Illuminate\Console\Command;

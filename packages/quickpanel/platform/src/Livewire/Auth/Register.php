@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Livewire\Auth;
+namespace QuickPanel\Platform\Livewire\Auth;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;

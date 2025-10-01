@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Livewire\Administrator\SettingManagement\Option;
+namespace QuickPanel\Platform\Livewire\Administrator\SettingManagement\Option;
 
 use Livewire\Attributes\Layout;
 use Livewire\Component;

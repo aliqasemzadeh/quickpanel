@@ -1,6 +1,6 @@
 <?php
 
-namespace Quickpanel\Platform\Mail;
+namespace QuickPanel\Platform\Mail;
 
 use App\Models\User;
 use Illuminate\Bus\Queueable;

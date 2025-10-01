@@ -1,9 +1,8 @@
 <?php
 
-namespace Quickpanel\Platform;
+namespace QuickPanel\Platform;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Route;
 
 class QuickPanelPlatformServiceProvider extends ServiceProvider
 {
@@ -24,11 +23,11 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
         // Console commands
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \Quickpanel\Platform\Commands\Administrator\CreateAdminCommand::class,
-                \Quickpanel\Platform\Commands\Administrator\CreatePermissionsCommand::class,
-                \Quickpanel\Platform\Commands\Administrator\CreateRolesCommand::class,
-                \Quickpanel\Platform\Commands\Administrator\SetUserAdminCommand::class,
-                \Quickpanel\Platform\Commands\Install\QuickPanelPlatformSetup::class,
+                \QuickPanel\Platform\Commands\Administrator\CreateAdminCommand::class,
+                \QuickPanel\Platform\Commands\Administrator\CreatePermissionsCommand::class,
+                \QuickPanel\Platform\Commands\Administrator\CreateRolesCommand::class,
+                \QuickPanel\Platform\Commands\Administrator\SetUserAdminCommand::class,
+                \QuickPanel\Platform\Commands\Install\QuickPanelPlatformSetup::class,
             ]);
         }
 
