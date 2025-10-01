@@ -37,8 +37,9 @@ class CreateRolesCommand extends Command
         DB::table('role_has_permissions')->truncate();
         Schema::enableForeignKeyConstraints();
 
-        foreach (__('platform::roles') as $role => $roleTitle) {
-            Role::create(['name' => $role]);
-        }
+
+        Role::create(['name' => 'user', 'guard_name' => 'web']);
+        Role::create(['name' => 'administrator', 'guard_name' => 'admin']);
+
     }
 }

@@ -18,7 +18,6 @@ class AdministratorAccessMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if(Auth::guard('admin')->check()) {
-            Log::info('AdministratorAccessMiddleware',[Auth::guard('admin')->user()->can('administrator_access')]);
             if(Auth::guard('admin')->user()->can('administrator_access')) {
                 return $next($request);
             }

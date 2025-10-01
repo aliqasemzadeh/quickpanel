@@ -31,7 +31,6 @@ class SetUserAdminCommand extends Command
         $userId = $this->ask('AdminId');
         try {
             $user = Admin::findOrFail($userId);
-            $user->assignRole('user');
             $user->assignRole('administrator');
             $this->info('Admin Set as Administrator');
         } catch (\Exception $e) {

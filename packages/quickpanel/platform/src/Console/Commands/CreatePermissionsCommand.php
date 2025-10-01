@@ -33,7 +33,7 @@ class CreatePermissionsCommand extends Command
         $permissions_user = __('platform::permissions.user');
 
         foreach ($permissions_user as $permission => $translate) {
-            Permission::firstOrCreate(
+            Permission::create(
                 ['name' => $permission]
             );
         }
@@ -42,12 +42,12 @@ class CreatePermissionsCommand extends Command
             $user->givePermissionTo($permission);
         }
 
-        $administrator = Role::findByName('administrator');
+        $administrator = Role::findByName('administrator', 'admin');
         $permissions_administrator = __('platform::permissions.administrator');
 
         foreach ($permissions_administrator as $permission => $translate) {
-            Permission::firstOrCreate(
-                ['name' => $permission]
+            Permission::create(
+                ['name' => $permission, 'guard_name' => 'admin']
             );
         }
 
