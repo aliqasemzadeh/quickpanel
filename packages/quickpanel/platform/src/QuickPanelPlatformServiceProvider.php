@@ -38,7 +38,7 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
         // Migrations
         $this->publishesMigrations([
             __DIR__.'/../database/migrations' => database_path('migrations'),
-        ]);
+        ], 'platform-migrations');
 
         // Publishes the config file
         $this->publishes([

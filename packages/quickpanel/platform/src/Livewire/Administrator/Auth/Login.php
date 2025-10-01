@@ -20,21 +20,8 @@ class Login extends Component
         return [
             'email' => ['required', 'email'],
             'password' => ['required', 'string'],
-            'captcha' => ['required', 'string', 'captcha'],
             'remember' => ['boolean'],
         ];
-    }
-
-    public function mount(): void
-    {
-        $this->refreshCaptcha();
-    }
-
-    public function refreshCaptcha(): void
-    {
-        // Generate a fresh captcha image source and clear the input value
-        $this->captchaSrc = captcha_src();
-        $this->captcha = '';
     }
 
     public function login()
@@ -59,7 +46,7 @@ class Login extends Component
         $this->reset('password');
 
         // Redirect to intended page or dashboard
-        return redirect()->intended(route('user.dashboard.index'));
+        return redirect()->intended(route('administrator.dashboard.index'));
     }
 
     #[Layout('platform::layouts.auth')]
