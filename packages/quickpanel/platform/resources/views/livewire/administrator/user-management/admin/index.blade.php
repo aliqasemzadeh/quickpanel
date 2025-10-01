@@ -12,5 +12,5 @@
     </li>
 </x-slot>
 <div>
-    <livewire:quick-panel.administrator.user-management.admin.table/>
+    <livewire:platform.administrator.user-management.admin.table/>
 </div>

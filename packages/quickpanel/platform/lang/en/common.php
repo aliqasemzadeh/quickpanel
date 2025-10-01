@@ -200,4 +200,8 @@ return [
     'revoke' => 'Revoke',
     'captcha' => 'Captcha',
     'admins' => 'Admins',
+    'create_admin' => 'Create Admin',
+    'edit_admin' => 'Edit Admin',
+    'admin_created' => 'Admin Created',
+    'admin_edited' => 'Admin Updated',
 ];

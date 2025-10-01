@@ -7,10 +7,10 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    #[Layout('layouts.administrator')]
+    #[Layout('platform::layouts.administrator')]
     public function render()
     {
         $this->authorize('administrator_user_role_index');
-        return view('livewire.administrator.user-management.role.index');
+        return view('platform::livewire.administrator.user-management.role.index');
     }
 }

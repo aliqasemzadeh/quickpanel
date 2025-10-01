@@ -21,6 +21,6 @@ class Users extends Component
     public function render()
     {
         $this->authorize('administrator_user_role_users');
-        return view('livewire.administrator.user-management.role.users');
+        return view('platform::livewire.administrator.user-management.role.users');
     }
 }

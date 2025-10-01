@@ -2,5 +2,5 @@
     {{ __('platform::common.roles') }}
 </x-slot>
 <div>
-    <livewire:quick-panel.administrator.user-management.role.table/>
+    <livewire:platform.administrator.user-management.role.table/>
 </div>

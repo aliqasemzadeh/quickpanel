@@ -40,6 +40,6 @@ class Permissions extends Component
         } else {
             $permissions = Permission::paginate();
         }
-        return view('livewire.administrator.user-management.role.permissions', compact('permissions'));
+        return view('platform::livewire.administrator.user-management.role.permissions', compact('permissions'));
     }
 }

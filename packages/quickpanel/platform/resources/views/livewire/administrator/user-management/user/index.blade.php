@@ -2,5 +2,5 @@
     {{ __('platform::common.users') }}
 </x-slot>
 <div>
-    <livewire:quick-panel.administrator.user-management.user.table/>
+    <livewire:platform.administrator.user-management.user.table/>
 </div>
