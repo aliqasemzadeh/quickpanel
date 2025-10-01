@@ -14,7 +14,7 @@ class CreateAdminCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'platform::create-admin-command';
+    protected $signature = 'platform:create-admin-command';
 
     /**
      * The console command description.

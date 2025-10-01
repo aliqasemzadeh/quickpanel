@@ -12,7 +12,7 @@ class QuickSetupCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'platform::quick-setup-command';
+    protected $signature = 'platform:quick-setup-command';
 
     /**
      * The console command description.

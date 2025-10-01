@@ -14,7 +14,7 @@ class CreatePermissionsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'platform::create-permissions-command';
+    protected $signature = 'platform:create-permissions-command';
 
     /**
      * The console command description.
@@ -30,7 +30,7 @@ class CreatePermissionsCommand extends Command
     {
         App::setLocale('en');
         $user = Role::findByName('user');
-        $permissions_user = __('permissions.user');
+        $permissions_user = __('platform::permissions.user');
 
         foreach ($permissions_user as $permission => $translate) {
             Permission::firstOrCreate(
@@ -43,7 +43,7 @@ class CreatePermissionsCommand extends Command
         }
 
         $administrator = Role::findByName('administrator');
-        $permissions_administrator = __('permissions.administrator');
+        $permissions_administrator = __('platform::permissions.administrator');
 
         foreach ($permissions_administrator as $permission => $translate) {
             Permission::firstOrCreate(

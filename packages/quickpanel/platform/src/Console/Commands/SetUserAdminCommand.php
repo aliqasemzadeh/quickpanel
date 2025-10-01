@@ -13,7 +13,7 @@ class SetUserAdminCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'platform::set-user-admin-command';
+    protected $signature = 'platform:set-user-admin-command';
 
     /**
      * The console command description.

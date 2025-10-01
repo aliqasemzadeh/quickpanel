@@ -16,7 +16,7 @@ class CreateRolesCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'platform::create-roles-command';
+    protected $signature = 'platform:create-roles-command';
 
     /**
      * The console command description.
@@ -37,7 +37,7 @@ class CreateRolesCommand extends Command
         DB::table('role_has_permissions')->truncate();
         Schema::enableForeignKeyConstraints();
 
-        foreach (__('roles') as $role => $roleTitle) {
+        foreach (__('platform::roles') as $role => $roleTitle) {
             Role::create(['name' => $role]);
         }
     }
