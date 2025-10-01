@@ -65,8 +65,8 @@
 
     <aside
         @class(['fixed top-0 start-0 z-40 w-64 h-screen pt-14 bg-white border-e border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700',
-            'transition-transform -translate-x-full' => (config('platform::common.sidebar_direction') == 'left'),
-            '-transition-transform translate-x-full' => (config('platform::common.sidebar_direction') == 'right'),
+            'transition-transform -translate-x-full' => (config('platform::sidebar_direction') == 'left'),
+            '-transition-transform translate-x-full' => (config('platform::sidebar_direction') == 'right'),
         ])
         aria-label="Sidenav"
         id="drawer-navigation"
