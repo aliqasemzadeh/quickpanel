@@ -26,6 +26,7 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
         // Register console commands
         if ($this->app->runningInConsole()) {
             $this->commands([
+                Console\Commands\CreateAdminCommand::class,
                 Console\Commands\CreatePermissionsCommand::class,
                 Console\Commands\CreateRolesCommand::class,
                 Console\Commands\QuickSetupCommand::class,
