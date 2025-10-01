@@ -1,5 +1,5 @@
 <?php
 return [
-    'slide_over_direction' => 'left',
-    'sidebar_direction' => 'right',
+    'slide_over_direction' => 'right',
+    'sidebar_direction' => 'left',
 ];

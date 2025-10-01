@@ -1,8 +1,9 @@
 <x-livewire-modal::stack>
     <x-livewire-modal::slideover
-        position="{{ config('platform::slide_over_direction')  }}"
+        position="{{ config('platform.slide_over_direction')  }}"
         class="w-full max-w-md overflow-auto rounded-lg bg-white dark:bg-gray-800 p-5"
     >
+
         <div class="flex flex-row items-center gap-2 mb-4">
 
             <h5 class="inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400"><svg class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

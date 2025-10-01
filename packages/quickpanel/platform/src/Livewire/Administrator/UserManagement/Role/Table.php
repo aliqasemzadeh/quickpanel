@@ -42,7 +42,7 @@ final class Table extends PowerGridComponent
                 ->can(auth()->user()->can('administrator_user_role_create'))
                 ->slot(__('platform::common.create_role'))
                 ->class('text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800')
-                ->dispatch('modal-open', ['component' => 'administrator.user-management.role.create']),
+                ->dispatch('modal-open', ['component' => 'platform.administrator.user-management.role.create']),
         ];
     }
 
@@ -104,19 +104,19 @@ final class Table extends PowerGridComponent
                 ->id()
                 ->can(auth()->user()->can('administrator_user_role_edit'))
                 ->class('px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800')
-                ->dispatch('modal-open', ['component' => 'administrator.user-management.role.edit', 'props' => ['roleId' => $row->id]]),
+                ->dispatch('modal-open', ['component' => 'platform.administrator.user-management.role.edit', 'props' => ['roleId' => $row->id]]),
             Button::add('users')
                 ->slot(__('platform::common.users'))
                 ->id()
                 ->can(auth()->user()->can('administrator_user_role_users'))
                 ->class('px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800')
-                ->dispatch('modal-open', ['component' => 'administrator.user-management.role.users', 'props' => ['id' => $row->id]]),
+                ->dispatch('modal-open', ['component' => 'platform.administrator.user-management.role.users', 'props' => ['id' => $row->id]]),
             Button::add('permissions')
                 ->slot(__('platform::common.permissions'))
                 ->id()
                 ->can(auth()->user()->can('administrator_user_role_permissions'))
                 ->class('px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-teal-700 rounded-lg hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800')
-                ->dispatch('modal-open', ['component' => 'administrator.user-management.role.permissions', 'props' => ['id' => $row->id]]),
+                ->dispatch('modal-open', ['component' => 'platform.administrator.user-management.role.permissions', 'props' => ['id' => $row->id]]),
             Button::add('delete')
                 ->slot(__('platform::common.delete'))
                 ->id()
