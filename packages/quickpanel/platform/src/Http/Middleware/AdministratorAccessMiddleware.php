@@ -5,6 +5,7 @@ namespace QuickPanel\Platform\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 
 class AdministratorAccessMiddleware
@@ -16,8 +17,9 @@ class AdministratorAccessMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check()) {
-            if(Auth::user()->can('administrator_access')) {
+        if(Auth::guard('admin')->check()) {
+            Log::info('AdministratorAccessMiddleware',[Auth::guard('admin')->user()->can('administrator_access')]);
+            if(Auth::guard('admin')->user()->can('administrator_access')) {
                 return $next($request);
             }
         }
