@@ -5981,7 +5981,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/quickpanel/platform",
-                "reference": "e81b74722bd1f09e13808e82768c5e67cd6dd9b3"
+                "reference": "536e3b81da53ea9a0f28c311d2365656b78dfb91"
             },
             "require": {
                 "elegantly/livewire-modal": "^1.0",
@@ -5994,9 +5994,16 @@
                 "spatie/laravel-permission": "^6.21"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "QuickPanel\\Platform\\QuickPanelPlatformServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
-                    "Quickpanel\\Platform\\": "src/"
+                    "QuickPanel\\Platform\\": "src/"
                 }
             },
             "license": [
