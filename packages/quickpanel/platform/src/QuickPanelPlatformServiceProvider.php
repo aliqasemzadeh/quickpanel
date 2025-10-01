@@ -25,11 +25,8 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
         // Translations
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'platform');
 
-        // Register Livewire components (package aliases)
-        Livewire::component(
-            'quick-panel.platform.livewire.administrator.auth.login',
-            \QuickPanel\Platform\Livewire\Administrator\Auth\Login::class
-        );
+        // Register all Livewire components in the package
+        $this->registerLivewireComponents();
 
         // Register console commands
         if ($this->app->runningInConsole()) {
@@ -61,5 +58,44 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../lang' => resource_path('lang/vendor/platform'),
         ], 'platform-lang');
+    }
+
+    private function registerLivewireComponents(): void
+    {
+        $baseNamespace = 'QuickPanel\\Platform\\Livewire';
+        $baseDir = __DIR__ . DIRECTORY_SEPARATOR . 'Livewire';
+
+        if (!is_dir($baseDir)) {
+            return;
+        }
+
+        $iterator = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($baseDir, \FilesystemIterator::SKIP_DOTS)
+        );
+
+        foreach ($iterator as $file) {
+            /** @var \SplFileInfo $file */
+            if ($file->getExtension() !== 'php') {
+                continue;
+            }
+
+            $relativePath = str_replace($baseDir . DIRECTORY_SEPARATOR, '', $file->getPathname());
+            $class = $baseNamespace . '\\' . str_replace([DIRECTORY_SEPARATOR, '.php'], ['\\', ''], $relativePath);
+
+            if (!class_exists($class)) {
+                continue;
+            }
+
+            if (!is_subclass_of($class, \Livewire\Component::class)) {
+                continue;
+            }
+
+            $namePath = str_replace('.php', '', $relativePath);
+            $normalized = str_replace(DIRECTORY_SEPARATOR, '/', $namePath);
+            $segments = array_map('strtolower', explode('/', $normalized));
+            $alias = 'quick-panel.platform.livewire.' . implode('.', $segments);
+
+            \Livewire\Livewire::component($alias, $class);
+        }
     }
 }
