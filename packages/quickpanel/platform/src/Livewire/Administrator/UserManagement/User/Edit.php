@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Administrator\UserManagement\User;
+namespace QuickPanel\Platform\Livewire\Administrator\UserManagement\User;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;

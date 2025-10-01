@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Administrator\UserManagement\Permission;
+namespace QuickPanel\Platform\Livewire\Administrator\UserManagement\Permission;
 
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Carbon;

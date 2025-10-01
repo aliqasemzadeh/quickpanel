@@ -2,7 +2,7 @@
 
 namespace QuickPanel\Platform\Livewire\Auth;
 
-use App\Livewire\User\Setting\Profile\Index as ProfileIndex;
+use QuickPanel\Platform\Livewire\User\Setting\Profile\Index as ProfileIndex;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Attributes\Layout;

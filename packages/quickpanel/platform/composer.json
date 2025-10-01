@@ -6,7 +6,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Quickpanel\\Platform\\": "src/"
+            "QuickPanel\\Platform\\": "src/"
         }
     },
     "authors": [
@@ -24,6 +24,13 @@
         "opcodesio/log-viewer": "^3.19",
         "power-components/livewire-powergrid": "^6.6",
         "spatie/laravel-permission": "^6.21"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "QuickPanel\\Platform\\QuickPanelPlatformServiceProvider"
+            ]
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Administrator\UserManagement\Permission;
+namespace QuickPanel\Platform\Livewire\Administrator\UserManagement\Permission;
 
 use Livewire\Attributes\Layout;
 use Livewire\Component;

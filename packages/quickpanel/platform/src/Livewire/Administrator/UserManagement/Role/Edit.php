@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Administrator\UserManagement\Role;
+namespace QuickPanel\Platform\Livewire\Administrator\UserManagement\Role;
 
 use Illuminate\Validation\Rule;
 use Livewire\Component;

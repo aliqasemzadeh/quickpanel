@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Administrator\UserManagement\Role;
+namespace QuickPanel\Platform\Livewire\Administrator\UserManagement\Role;
 
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
