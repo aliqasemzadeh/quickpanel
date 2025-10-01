@@ -11,6 +11,7 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['middleware' => [\QuickPanel\Platform\Http\Middleware\AdministratorAccessMiddleware::class]], function () {
         Route::get('/administrator/dashboard/index', QuickPanel\Platform\Livewire\Administrator\Dashboard\Index::class)->name('administrator.dashboard.index');
+        Route::get('/administrator/user-management/admin/index', QuickPanel\Platform\Livewire\Administrator\UserManagement\Admin\Index::class)->name('administrator.user-management.admin.index');
         Route::get('/administrator/user-management/user/index', QuickPanel\Platform\Livewire\Administrator\UserManagement\User\Index::class)->name('administrator.user-management.user.index');
         Route::get('/administrator/user-management/role/index', QuickPanel\Platform\Livewire\Administrator\UserManagement\Role\Index::class)->name('administrator.user-management.role.index');
         Route::get('/administrator/user-management/permission/index', QuickPanel\Platform\Livewire\Administrator\UserManagement\Permission\Index::class)->name('administrator.user-management.permission.index');
