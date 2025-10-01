@@ -13,7 +13,7 @@ class PasswordChangedAlertMail extends Mailable
     public function build(): self
     {
         return $this
-            ->subject(trans('quickpanel.email_subject_password_changed'))
+            ->subject(trans('platform::common.email_subject_password_changed'))
             ->markdown('platform::emails.password-changed');
     }
 }

@@ -22,7 +22,7 @@ class ForgotPasswordCodeMail extends Mailable
     public function build(): self
     {
         return $this
-            ->subject(trans('quickpanel.email_subject_forgot_password'))
+            ->subject(trans('platform::common.email_subject_forgot_password'))
             ->markdown('platform::emails.forgot-password', [
                 'code' => $this->code,
                 'ttlMinutes' => $this->ttlMinutes,
