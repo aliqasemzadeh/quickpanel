@@ -20,6 +20,17 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
         // Views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'platform');
 
+        // Console commands
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                \QuickPanel\Platform\Commands\Administrator\CreateAdminCommand::class,
+                \QuickPanel\Platform\Commands\Administrator\CreatePermissionsCommand::class,
+                \QuickPanel\Platform\Commands\Administrator\CreateRolesCommand::class,
+                \QuickPanel\Platform\Commands\Administrator\SetUserAdminCommand::class,
+                \QuickPanel\Platform\Commands\Install\QuickPanelPlatformSetup::class,
+            ]);
+        }
+
         // Publishes the config file
         $this->publishes([
             __DIR__.'/../config/platform.php' => config_path('platform.php'),
@@ -29,5 +40,10 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/platform'),
         ], 'platform-views');
+
+        // Publishes the lang files
+        $this->publishes([
+            __DIR__.'/../lang' => resource_path('lang/vendor/platform'),
+        ], 'platform-lang');
     }
 }
