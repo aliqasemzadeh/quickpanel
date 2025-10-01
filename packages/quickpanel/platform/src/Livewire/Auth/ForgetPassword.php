@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Auth;
+namespace QuickPanel\Platform\Livewire\Auth;
 
 use App\Mail\ForgotPasswordCodeMail;
 use App\Models\User;
@@ -50,9 +50,9 @@ class ForgetPassword extends Component
         return 'pwd_reset:' . strtolower(trim($email));
     }
 
-    #[Layout('layouts.auth')]
+    #[Layout('platform::layouts.auth')]
     public function render()
     {
-        return view('livewire.auth.forget-password');
+        return view('platform::livewire.auth.forget-password');
     }
 }

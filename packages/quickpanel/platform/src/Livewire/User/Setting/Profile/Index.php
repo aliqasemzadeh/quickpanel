@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\User\Setting\Profile;
+namespace QuickPanel\Platform\Livewire\User\Setting\Profile;
 
 use App\Mail\VerifyNewEmail;
 use Illuminate\Support\Facades\Auth;
@@ -171,9 +171,9 @@ class Index extends Component
         redirect()->route('home')->send();
     }
 
-    #[Layout('layouts.user')]
+    #[Layout('platform::layouts.user')]
     public function render()
     {
-        return view('livewire.user.setting.profile.index');
+        return view('platform::livewire.user.setting.profile.index');
     }
 }

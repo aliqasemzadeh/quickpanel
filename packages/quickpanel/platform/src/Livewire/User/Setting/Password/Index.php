@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\User\Setting\Password;
+namespace QuickPanel\Platform\Livewire\User\Setting\Password;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -54,9 +54,9 @@ class Index extends Component
         Toaster::success(__('quickpanel.password_changed_successfully'));
     }
 
-    #[Layout('layouts.user')]
+    #[Layout('platform::layouts.user')]
     public function render()
     {
-        return view('livewire.user.setting.password.index');
+        return view('platform::livewire.user.setting.password.index');
     }
 }

@@ -59,6 +59,6 @@ class Edit extends Component
 
     public function render()
     {
-        return view('livewire.administrator.user-management.user.edit');
+        return view('platform::livewire.administrator.user-management.user.edit');
     }
 }

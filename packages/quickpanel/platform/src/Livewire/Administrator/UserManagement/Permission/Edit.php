@@ -43,6 +43,6 @@ class Edit extends Component
     public function render()
     {
         $this->authorize('administrator_user_permission_edit');
-        return view('livewire.administrator.user-management.permission.edit');
+        return view('platform::livewire.administrator.user-management.permission.edit');
     }
 }

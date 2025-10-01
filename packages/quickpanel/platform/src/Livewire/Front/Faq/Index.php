@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Livewire\Front\Faq;
+namespace QuickPanel\Platform\Livewire\Front\Faq;
 
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
 class Index extends Component
 {
-    #[Layout('layouts.front')]
+    #[Layout('platform::layouts.front')]
     public function render()
     {
-        return view('livewire.front.faq.index');
+        return view('platform::livewire.front.faq.index');
     }
 }

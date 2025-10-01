@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Auth;
+namespace QuickPanel\Platform\Livewire\Auth;
 
 use App\Livewire\User\Setting\Profile\Index as ProfileIndex;
 use Illuminate\Support\Facades\Auth;
@@ -148,9 +148,9 @@ class VerifyEmail extends Component
         redirect()->route('user.dashboard.index')->send();
     }
 
-    #[Layout('layouts.auth')]
+    #[Layout('platform::layouts.auth')]
     public function render()
     {
-        return view('livewire.auth.verify-email');
+        return view('platform::livewire.auth.verify-email');
     }
 }

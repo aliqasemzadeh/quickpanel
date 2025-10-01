@@ -47,6 +47,6 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.administrator.user-management.user.create');
+        return view('platform::livewire.administrator.user-management.user.create');
     }
 }

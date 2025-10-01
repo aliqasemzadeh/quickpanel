@@ -50,6 +50,6 @@ class Roles extends Component
         } else {
             $roles = Role::paginate();
         }
-        return view('livewire.administrator.user-management.user.roles', compact('roles'));
+        return view('platform::livewire.administrator.user-management.user.roles', compact('roles'));
     }
 }
