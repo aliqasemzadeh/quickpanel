@@ -94,8 +94,12 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
             $normalized = str_replace(DIRECTORY_SEPARATOR, '/', $namePath);
             $segments = array_map('strtolower', explode('/', $normalized));
             $alias = 'quick-panel.platform.livewire.' . implode('.', $segments);
+            $shortAlias = implode('.', $segments);
 
             \Livewire\Livewire::component($alias, $class);
+            // Also register a short alias (without the package prefix) to match Blade usages like
+            // <livewire:administrator.user-management.admin.table />
+            \Livewire\Livewire::component($shortAlias, $class);
         }
     }
 }
