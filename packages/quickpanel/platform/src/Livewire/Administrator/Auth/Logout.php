@@ -13,7 +13,7 @@ class Logout extends Component
      */
     public function mount()
     {
-        if (! Auth::check()) {
+        if (! Auth::guard('admin')->check()) {
             // If already logged out, just go to login page
             return redirect()->to(route('login'));
         }
@@ -24,7 +24,7 @@ class Logout extends Component
      */
     public function confirmLogout()
     {
-        Auth::logout();
+        Auth::guard('admin')->logout();
 
         // Invalidate and regenerate session for security
         request()->session()->invalidate();
@@ -37,9 +37,9 @@ class Logout extends Component
         return redirect()->to(route('login'));
     }
 
-    #[Layout('layouts.auth')]
+    #[Layout('platform::layouts.auth')]
     public function render()
     {
-        return view('livewire.auth.logout');
+        return view('platform::livewire.administrator.auth.logout');
     }
 }
