@@ -171,6 +171,7 @@
                         </li>
                     </ul>
                 </li>
+                @includeIf('menus.administrator')
                 <li>
                     <button
                         type="button"

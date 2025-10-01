@@ -119,6 +119,7 @@
                         <span class="ms-3">{{ __('platform::common.dashboard') }}</span>
                     </a>
                 </li>
+                @includeIf('menus.user')
                 <li>
                     <button
                         type="button"
