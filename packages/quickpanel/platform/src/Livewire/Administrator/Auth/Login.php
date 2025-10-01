@@ -11,9 +11,7 @@ class Login extends Component
 {
     public string $email = '';
     public string $password = '';
-    public string $captcha = '';
     public bool $remember = false;
-    public string $captchaSrc = '';
 
     protected function rules(): array
     {
