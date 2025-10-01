@@ -3,7 +3,6 @@
 namespace QuickPanel\Platform;
 
 use Illuminate\Support\ServiceProvider;
-use QuickPanel\Platform\Commands\Install\QuickPanelPlatformSetup;
 
 class QuickPanelPlatformServiceProvider extends ServiceProvider
 {
@@ -27,7 +26,10 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
         // Register console commands
         if ($this->app->runningInConsole()) {
             $this->commands([
-                QuickPanelPlatformSetup::class,
+                \QuickPanel\Platform\Commands\CreatePermissionsCommand::class,
+                \QuickPanel\Platform\Commands\CreateRolesCommand::class,
+                \QuickPanel\Platform\Commands\QuickSetupCommand::class,
+                \QuickPanel\Platform\Commands\SetUserAdminCommand::class,
             ]);
         }
 
