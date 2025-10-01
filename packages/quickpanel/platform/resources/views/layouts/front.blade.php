@@ -15,12 +15,12 @@
     <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="{{ route('home') }}" class="flex items-center">
-                @includeIf('layouts.global.logo', ['class' => 'mr-3 h-6 sm:h-9', 'width' => '32px', 'height' => '32px'])
+                @includeIf('platform::layouts.global.logo', ['class' => 'mr-3 h-6 sm:h-9', 'width' => '32px', 'height' => '32px'])
                 <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">{{ config('app.name') }}</span>
             </a>
             <div class="flex items-center lg:order-2">
-                @includeIf('layouts.global.theme')
-                @includeIf('layouts.global.action')
+                @includeIf('platform::layouts.global.theme')
+                @includeIf('platform::layouts.global.action')
             </div>
         </div>
     </nav>
@@ -72,7 +72,7 @@
 <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
     <div class="mx-auto max-w-screen-xl text-center">
         <a href="{{ route('home') }}" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
-                @include('layouts.global.logo', ['class' => 'mr-2 h-8', 'width' => '33px', 'height' => '33px'])
+                @include('platform::layouts.global.logo', ['class' => 'mr-2 h-8', 'width' => '33px', 'height' => '33px'])
                 {{ config('app.name') }}
         </a>
         <p class="my-6 text-gray-500 dark:text-gray-400">Open-source library of over 400+ web components and interactive elements built for better web.</p>

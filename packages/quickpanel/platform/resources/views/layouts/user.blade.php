@@ -49,14 +49,14 @@
                     <span class="sr-only">Toggle sidebar</span>
                 </button>
                 <a href="{{ route('home') }}" class="flex items-center justify-between mr-4">
-                    @includeIf('layouts.global.logo', ['class' => 'mr-3 h-8', 'width' => '32px', 'height' => '32px'])
+                    @includeIf('platform::layouts.global.logo', ['class' => 'mr-3 h-8', 'width' => '32px', 'height' => '32px'])
                     <span class="hidden md:inline self-center text-xl font-semibold whitespace-nowrap dark:text-white">{{ config('app.name') }}</span>
                 </a>
-                @include('layouts.global.search')
+                @include('platform::layouts.global.search')
             </div>
             <div class="flex items-center lg:order-2">
-                @include('layouts.global.theme')
-                @include('layouts.global.user')
+                @include('platform::layouts.global.theme')
+                @include('platform::layouts.global.user')
             </div>
         </div>
     </nav>
