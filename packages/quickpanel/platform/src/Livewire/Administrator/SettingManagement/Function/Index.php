@@ -12,7 +12,7 @@ class Index extends Component
     public function updatePermissions()
     {
         $this->authorize('administrator_setting_function_index');
-        Artisan::call('platform::system:administrator:create-permissions-command');
+        Artisan::call('platform:create-permissions-command');
         Toaster::success(__('platform::common.permissions_updated'));
     }
     #[Layout('platform::layouts.administrator')]
