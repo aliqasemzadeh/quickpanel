@@ -1,6 +1,6 @@
 <x-livewire-modal::stack>
     <x-livewire-modal::slideover
-        position="{{ config('platform.slideover_direction')  }}"
+        position="{{ config('platform.slide_over_direction')  }}"
         class="w-full max-w-md overflow-auto rounded-lg bg-white dark:bg-gray-800 p-5"
     >
         <div class="flex flex-row items-center gap-2 mb-4">
