@@ -199,5 +199,5 @@ return [
     'permission_revoked' => 'Permission Revoked.',
     'revoke' => 'Revoke',
     'captcha' => 'Captcha',
-    'admin' => 'Admins',
+    'admins' => 'Admins',
 ];
