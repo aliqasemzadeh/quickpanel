@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ __('platform::common.direction') }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? "" }} - {{ config('app.name', 'QuickPanel') }}</title>
-
-    @vite('resources/css/app.css')
-    @livewireStyles
+    @include('platform::layouts.partials.heads')
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
 
@@ -71,9 +66,7 @@
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2021-2022 <a href="#" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
     </div>
 </footer>
-@vite('resources/js/app.js')
-<x-toaster-hub />
-<livewire:modal />
-@livewireScripts
+
+@include('platform::layouts.partials.foots')
 </body>
 </html>

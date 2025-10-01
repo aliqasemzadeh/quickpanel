@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ __('platform::common.direction') }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? "" }} - {{ config('app.name', 'QuickPanel') }}</title>
-
-    @vite('resources/css/app.css')
-    @livewireStyles
+    @include('platform::layouts.partials.heads')
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
 <header>
@@ -42,9 +37,6 @@
 
 </main>
 
-@vite('resources/js/app.js')
-<x-toaster-hub />
-<livewire:modal />
-@livewireScripts
+@include('platform::layouts.partials.foots')
 </body>
 </html>
