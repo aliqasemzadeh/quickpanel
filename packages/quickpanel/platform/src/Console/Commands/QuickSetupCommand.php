@@ -1,6 +1,6 @@
 <?php
 
-namespace QuickPanel\Platform\Commands;
+namespace QuickPanel\Platform\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;

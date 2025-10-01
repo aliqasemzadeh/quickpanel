@@ -1,20 +1,19 @@
 <?php
 
-namespace QuickPanel\Platform\Commands;
+namespace QuickPanel\Platform\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Hash;
 use QuickPanel\Platform\Models\Admin;
 
-class CreateAdminCommand extends Command
+class SetUserAdminCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'platform::create-admin-command';
+    protected $signature = 'platform::set-user-admin-command';
 
     /**
      * The console command description.
@@ -29,18 +28,12 @@ class CreateAdminCommand extends Command
     public function handle()
     {
         App::setLocale('en');
-        $name = $this->ask('Full Name');
-        $email = $this->ask('EMail');
-        $password = $this->secret('Password');
+        $userId = $this->ask('AdminId');
         try {
-            $user = Admin::create([
-                'name' => $name,
-                'email' => $email,
-                'password' => Hash::make($password),
-            ]);
+            $user = Admin::findOrFail($userId);
             $user->assignRole('user');
             $user->assignRole('administrator');
-            $this->info('User Created Successfully');
+            $this->info('Admin Set as Administrator');
         } catch (\Exception $e) {
             $this->error($e->getMessage());
         }
