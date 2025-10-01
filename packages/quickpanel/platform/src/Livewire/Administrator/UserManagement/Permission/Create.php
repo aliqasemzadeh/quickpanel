@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Administrator\UserManagement\Permission;
+namespace Quickpanel\Platform\Livewire\Administrator\UserManagement\Permission;
 
 use Livewire\Component;
 use Masmerise\Toaster\Toaster;
@@ -35,6 +35,6 @@ class Create extends Component
     public function render()
     {
         $this->authorize('administrator_user_permission_create');
-        return view('livewire.administrator.user-management.permission.create');
+        return view('platform::livewire.administrator.user-management.permission.create');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Auth;
+namespace Quickpanel\Platform\Livewire\Auth;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -45,9 +45,9 @@ class Register extends Component
         return redirect()->intended('/');
     }
 
-    #[Layout('layouts.auth')]
+    #[Layout('platform::layouts.auth')]
     public function render()
     {
-        return view('livewire.auth.register');
+        return view('platform::livewire.auth.register');
     }
 }

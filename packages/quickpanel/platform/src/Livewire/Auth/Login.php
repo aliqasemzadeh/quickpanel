@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Auth;
+namespace Quickpanel\Platform\Livewire\Auth;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -62,9 +62,9 @@ class Login extends Component
         return redirect()->intended(route('user.dashboard.index'));
     }
 
-    #[Layout('layouts.auth')]
+    #[Layout('platform::layouts.auth')]
     public function render()
     {
-        return view('livewire.auth.login');
+        return view('platform::livewire.auth.login');
     }
 }

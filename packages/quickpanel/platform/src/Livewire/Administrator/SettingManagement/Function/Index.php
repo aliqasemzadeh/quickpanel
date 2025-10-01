@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Administrator\SettingManagement\Function;
+namespace Quickpanel\Platform\Livewire\Administrator\SettingManagement\Function;
 
 use Illuminate\Support\Facades\Artisan;
 use Livewire\Attributes\Layout;
@@ -12,12 +12,12 @@ class Index extends Component
     public function updatePermissions()
     {
         $this->authorize('administrator_setting_function_index');
-        Artisan::call('system:administrator:create-permissions-command');
+        Artisan::call('platform::system:administrator:create-permissions-command');
         Toaster::success(__('quickpanel.permissions_updated'));
     }
-    #[Layout('layouts.administrator')]
+    #[Layout('platform::layouts.administrator')]
     public function render()
     {
-        return view('livewire.administrator.setting-management.function.index');
+        return view('platform::livewire.administrator.setting-management.function.index');
     }
 }

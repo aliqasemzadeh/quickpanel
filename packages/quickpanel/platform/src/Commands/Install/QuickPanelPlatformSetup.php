@@ -1,10 +1,10 @@
 <?php
 
-namespace QuickPanel\Platform\Commands\Install;
+namespace Quickpanel\Platform\Commands\Install;
 
-use QuickPanel\Platform\Commands\Administrator\CreateAdminCommand;
-use QuickPanel\Platform\Commands\Administrator\CreatePermissionsCommand;
-use QuickPanel\Platform\Commands\Administrator\CreateRolesCommand;
+use Quickpanel\Platform\Commands\Administrator\CreateAdminCommand;
+use Quickpanel\Platform\Commands\Administrator\CreatePermissionsCommand;
+use Quickpanel\Platform\Commands\Administrator\CreateRolesCommand;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 

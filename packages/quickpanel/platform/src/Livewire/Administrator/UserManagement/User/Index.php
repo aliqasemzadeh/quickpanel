@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Livewire\Administrator\UserManagement\User;
+namespace Quickpanel\Platform\Livewire\Administrator\UserManagement\User;
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 
 class Index extends Component
 {
-    #[Layout('layouts.administrator')]
+    #[Layout('platform::layouts.administrator')]
     public function render()
     {
-        return view('livewire.administrator.user-management.user.index');
+        return view('platform::livewire.administrator.user-management.user.index');
     }
 }
