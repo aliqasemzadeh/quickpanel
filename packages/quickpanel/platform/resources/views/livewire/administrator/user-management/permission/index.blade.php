@@ -1,5 +1,5 @@
 <x-slot name="title">
-    {{ __('quickpanel.permissions') }}
+    {{ __('platform::common.permissions') }}
 </x-slot>
 <div>
     <livewire:administrator.user-management.permission.table/>

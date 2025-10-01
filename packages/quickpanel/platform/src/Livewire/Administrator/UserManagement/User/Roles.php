@@ -27,7 +27,7 @@ class Roles extends Component
         }
         $this->user->assignRole($role->name);
         $this->dispatch('administrator.user-management.user.roles');
-        Toaster::success( __('quickpanel.role_assigned'));
+        Toaster::success( __('platform::common.role_assigned'));
     }
 
     public function delete(Role $role): void
@@ -37,7 +37,7 @@ class Roles extends Component
         }
         $this->user->removeRole($role->name);
         $this->dispatch('administrator.user-management.user.roles');
-        Toaster::success( __('quickpanel.role_deleted'));
+        Toaster::success( __('platform::common.role_deleted'));
     }
 
 

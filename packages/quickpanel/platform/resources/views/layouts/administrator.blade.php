@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ __('quickpanel.direction') }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ __('platform::common.direction') }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,7 +73,7 @@
     >
         <div class="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
             <form action="#" method="GET" class="md:hidden mb-2">
-                <label for="sidebar-search" class="sr-only">{{ __('quickpanel.search') }}</label>
+                <label for="sidebar-search" class="sr-only">{{ __('platform::common.search') }}</label>
                 <div class="relative">
                     <div
                         class="flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none"
@@ -96,7 +96,7 @@
                         name="search"
                         id="sidebar-search"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full ps-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="{{ __('quickpanel.search') }}"
+                        placeholder="{{ __('platform::common.search') }}"
                     />
                 </div>
             </form>
@@ -116,7 +116,7 @@
                             <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                             <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                         </svg>
-                        <span class="ms-3">{{ __('quickpanel.dashboard') }}</span>
+                        <span class="ms-3">{{ __('platform::common.dashboard') }}</span>
                     </a>
                 </li>
                 <li>
@@ -131,7 +131,7 @@
                         </svg>
 
                         <span class="flex-1 ms-3 text-start whitespace-nowrap"
-                        >{{ __('quickpanel.user_management') }}</span
+                        >{{ __('platform::common.user_management') }}</span
                         >
                         <svg
                             aria-hidden="true"
@@ -152,21 +152,21 @@
                             <a
                                 href="{{ route('administrator.user-management.user.index') }}"
                                 class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.user.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
-                            >{{ __('quickpanel.users') }}</a
+                            >{{ __('platform::common.users') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('administrator.user-management.role.index') }}"
                                 class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.role.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
-                            >{{ __('quickpanel.roles') }}</a
+                            >{{ __('platform::common.roles') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('administrator.user-management.permission.index') }}"
                                 class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.user-management.permission.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
-                            >{{ __('quickpanel.permissions') }}</a
+                            >{{ __('platform::common.permissions') }}</a
                             >
                         </li>
                     </ul>
@@ -183,7 +183,7 @@
                         </svg>
 
                         <span class="flex-1 ms-3 text-start whitespace-nowrap"
-                        >{{ __('quickpanel.setting_management') }}</span
+                        >{{ __('platform::common.setting_management') }}</span
                         >
                         <svg
                             aria-hidden="true"
@@ -204,14 +204,14 @@
                             <a
                                 href="{{ route('administrator.setting-management.option.index') }}"
                                 class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.setting-management.option.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
-                            >{{ __('quickpanel.options') }}</a
+                            >{{ __('platform::common.options') }}</a
                             >
                         </li>
                         <li>
                             <a
                                 href="{{ route('administrator.setting-management.function.index') }}"
                                 class="flex items-center p-2 ps-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ request()->routeIs('administrator.setting-management.function.*') ? ' bg-gray-100 dark:bg-gray-700' : ''  }}"
-                            >{{ __('quickpanel.functions') }}</a
+                            >{{ __('platform::common.functions') }}</a
                             >
                         </li>
                     </ul>

@@ -29,19 +29,19 @@ class Index extends Component
         $user = Auth::user();
         if (! $user) {
             // If no authenticated user, redirect to login
-            Toaster::error(__('quickpanel.invalid_current_password'));
+            Toaster::error(__('platform::common.invalid_current_password'));
             redirect()->route('login')->send();
             return;
         }
 
         if (! Hash::check($validated['current_password'], $user->password)) {
-            Toaster::error(__('quickpanel.invalid_current_password'));
+            Toaster::error(__('platform::common.invalid_current_password'));
             return;
         }
 
         // Prevent re-using the same password
         if (Hash::check($validated['password'], $user->password)) {
-            Toaster::error(__('quickpanel.password_same_as_old'));
+            Toaster::error(__('platform::common.password_same_as_old'));
             return;
         }
 
@@ -51,7 +51,7 @@ class Index extends Component
         // Reset fields after success
         $this->reset(['current_password', 'password', 'password_confirmation']);
 
-        Toaster::success(__('quickpanel.password_changed_successfully'));
+        Toaster::success(__('platform::common.password_changed_successfully'));
     }
 
     #[Layout('platform::layouts.user')]

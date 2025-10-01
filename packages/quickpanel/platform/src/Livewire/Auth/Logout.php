@@ -31,7 +31,7 @@ class Logout extends Component
         request()->session()->regenerateToken();
 
         // Optional: flash a message to show after redirect
-        session()->flash('success', __('quickpanel.logged_out'));
+        session()->flash('success', __('platform::common.logged_out'));
 
         // Redirect to login or home page
         return redirect()->to(route('login'));

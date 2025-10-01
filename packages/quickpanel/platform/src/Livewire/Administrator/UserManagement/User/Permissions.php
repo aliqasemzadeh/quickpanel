@@ -27,7 +27,7 @@ class Permissions extends Component
         }
         $this->user->givePermissionTo($permission->name);
         $this->dispatch('administrator.user-management.user.permissions');
-        Toaster::success( __('quickpanel.permission_assigned'));
+        Toaster::success( __('platform::common.permission_assigned'));
     }
 
     public function revoke(Permission $permission): void
@@ -37,7 +37,7 @@ class Permissions extends Component
         }
         $this->user->revokePermissionTo($permission->name);
         $this->dispatch('administrator.user-management.user.permissions');
-        Toaster::success( __('quickpanel.permission_revoked'));
+        Toaster::success( __('platform::common.permission_revoked'));
     }
 
     #[On('administrator.user-management.user.permissions.render')]

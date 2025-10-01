@@ -1,16 +1,16 @@
 <x-slot name="title">
-    {{ __('quickpanel.forgot_password_title') }}
+    {{ __('platform::common.forgot_password_title') }}
 </x-slot>
 
 <form class="mt-4 space-y-4 sm:mt-6 sm:space-y-6" wire:submit="sendCode">
     <div>
-        <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.email') }}</label>
+        <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">{{ __('platform::common.email') }}</label>
         <input
             type="email"
             wire:model="email"
             id="email"
             class="block w-full rounded-lg border bg-gray-50 p-2.5 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 sm:text-sm @error('email') border-red-500 focus:border-red-500 focus:ring-red-500 @enderror"
-            placeholder="{{ __('quickpanel.email_placeholder') }}"
+            placeholder="{{ __('platform::common.email_placeholder') }}"
             required
         />
         @error('email')
@@ -27,9 +27,9 @@
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
             </svg>
-            <span>{{ __('quickpanel.send_reset_code') }}</span>
+            <span>{{ __('platform::common.send_reset_code') }}</span>
         </button>
-        <a href="{{ route('change-password') }}" class="text-sm text-primary-700 hover:underline dark:text-primary-500">{{ __('quickpanel.already_have_code') }}</a>
-        <a href="{{ route('login') }}" class="text-sm text-gray-600 hover:underline dark:text-gray-400">{{ __('quickpanel.back_to_login') }}</a>
+        <a href="{{ route('change-password') }}" class="text-sm text-primary-700 hover:underline dark:text-primary-500">{{ __('platform::common.already_have_code') }}</a>
+        <a href="{{ route('login') }}" class="text-sm text-gray-600 hover:underline dark:text-gray-400">{{ __('platform::common.back_to_login') }}</a>
     </div>
 </form>

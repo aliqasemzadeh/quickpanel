@@ -1,5 +1,5 @@
 <x-slot name="title">
-    {{ __('quickpanel.users') }}
+    {{ __('platform::common.users') }}
 </x-slot>
 <div>
     <livewire:administrator.user-management.user.table/>

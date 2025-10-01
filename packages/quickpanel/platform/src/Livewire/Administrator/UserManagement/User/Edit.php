@@ -50,7 +50,7 @@ class Edit extends Component
         $user->save();
 
         // Required by issue: use this exact message key
-        Toaster::success( __('quickpanel.user_edited'));
+        Toaster::success( __('platform::common.user_edited'));
         // Refresh the users table
         $this->dispatch('pg:eventRefresh-administrator.user-management.user.table');
 

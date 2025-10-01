@@ -34,14 +34,14 @@ class ChangePassword extends Component
         $storedCode = Cache::get($cacheKey);
 
         if (! $storedCode || $storedCode !== $validated['code']) {
-            Toaster::error(__('quickpanel.invalid_reset_code'));
+            Toaster::error(__('platform::common.invalid_reset_code'));
             return;
         }
 
         $user = User::where('email', $validated['email'])->first();
         if (! $user) {
             // For security, treat as invalid without revealing whether user exists
-            Toaster::error(__('quickpanel.invalid_reset_code'));
+            Toaster::error(__('platform::common.invalid_reset_code'));
             return;
         }
 
@@ -58,7 +58,7 @@ class ChangePassword extends Component
             // Non-blocking: still show success
         }
 
-        Toaster::success(__('quickpanel.password_changed_successfully'));
+        Toaster::success(__('platform::common.password_changed_successfully'));
 
         // Optionally redirect to login
         redirect()->route('login')->send();

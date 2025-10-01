@@ -20,6 +20,9 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
         // Views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'platform');
 
+        // Translations
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'platform');
+
         // Publishes the config file
         $this->publishes([
             __DIR__.'/../config/platform.php' => config_path('platform.php'),

@@ -32,7 +32,7 @@ class Create extends Component
         ]);
 
         // Required by issue: use this exact message key
-        Toaster::success( __('quickpanel.user_created'));
+        Toaster::success( __('platform::common.user_created'));
 
 
         // Refresh the users table

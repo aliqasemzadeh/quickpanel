@@ -1,14 +1,14 @@
 <x-slot name="title">
-    {{ __('quickpanel.change_password') }}
+    {{ __('platform::common.change_password') }}
 </x-slot>
 <div>
     <div class="mx-auto max-w-xl">
         <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
-            <h1 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{{ __('quickpanel.change_password') }}</h1>
+            <h1 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{{ __('platform::common.change_password') }}</h1>
 
             <form wire:submit.prevent="update" class="space-y-4">
                 <div>
-                    <label for="current_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.password') }} ({{ __('quickpanel.current_password') }})</label>
+                    <label for="current_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('platform::common.password') }} ({{ __('platform::common.current_password') }})</label>
                     <input type="password" id="current_password" wire:model.defer="current_password" autocomplete="current-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
                     @error('current_password')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -16,7 +16,7 @@
                 </div>
 
                 <div>
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.new_password') }}</label>
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('platform::common.new_password') }}</label>
                     <input type="password" id="password" wire:model.defer="password" autocomplete="new-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
                     @error('password')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -24,7 +24,7 @@
                 </div>
 
                 <div>
-                    <label for="password_confirmation" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('quickpanel.password_confirmation') }}</label>
+                    <label for="password_confirmation" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('platform::common.password_confirmation') }}</label>
                     <input type="password" id="password_confirmation" wire:model.defer="password_confirmation" autocomplete="new-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" />
                     @error('password_confirmation')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -37,7 +37,7 @@
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
                         </svg>
-                        {{ __('quickpanel.update') }}
+                        {{ __('platform::common.update') }}
                     </button>
                 </div>
             </form>

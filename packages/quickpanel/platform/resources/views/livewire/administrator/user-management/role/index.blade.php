@@ -1,5 +1,5 @@
 <x-slot name="title">
-    {{ __('quickpanel.roles') }}
+    {{ __('platform::common.roles') }}
 </x-slot>
 <div>
     <livewire:administrator.user-management.role.table/>

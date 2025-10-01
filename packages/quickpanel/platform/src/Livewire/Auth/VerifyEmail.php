@@ -28,7 +28,7 @@ class VerifyEmail extends Component
         if ($token && $uid) {
             $this->checkedLink = true;
             if (! request()->hasValidSignature()) {
-                Toaster::error(__('quickpanel.verification_link_invalid'));
+                Toaster::error(__('platform::common.verification_link_invalid'));
                 return;
             }
             $this->verifyUsingToken($uid, (string) $token);
@@ -39,31 +39,31 @@ class VerifyEmail extends Component
     {
         $code = $this->d1 . $this->d2 . $this->d3 . $this->d4 . $this->d5 . $this->d6;
         if (strlen($code) !== 6 || !ctype_digit($code)) {
-            Toaster::error(__('quickpanel.verification_code_required'));
+            Toaster::error(__('platform::common.verification_code_required'));
             return;
         }
 
         $user = Auth::user();
         if (! $user) {
-            Toaster::error(__('quickpanel.not_authenticated'));
+            Toaster::error(__('platform::common.not_authenticated'));
             return;
         }
 
         $cacheKey = ProfileIndex::verificationCacheKey($user->id);
         $payload = Cache::get($cacheKey);
         if (! $payload) {
-            Toaster::error(__('quickpanel.verification_not_found'));
+            Toaster::error(__('platform::common.verification_not_found'));
             return;
         }
 
         if (time() > (int) ($payload['expires_at'] ?? 0)) {
             Cache::forget($cacheKey);
-            Toaster::error(__('quickpanel.verification_code_expired'));
+            Toaster::error(__('platform::common.verification_code_expired'));
             return;
         }
 
         if (($payload['code'] ?? null) !== $code) {
-            Toaster::error(__('quickpanel.verification_code_invalid'));
+            Toaster::error(__('platform::common.verification_code_invalid'));
             return;
         }
 
@@ -74,13 +74,13 @@ class VerifyEmail extends Component
     {
         $user = Auth::user();
         if (! $user) {
-            Toaster::error(__('quickpanel.not_authenticated'));
+            Toaster::error(__('platform::common.not_authenticated'));
             return;
         }
         $cacheKey = ProfileIndex::verificationCacheKey($user->id);
         $payload = Cache::get($cacheKey);
         if (! $payload) {
-            Toaster::error(__('quickpanel.verification_nothing_to_resend'));
+            Toaster::error(__('platform::common.verification_nothing_to_resend'));
             return;
         }
 
@@ -97,32 +97,32 @@ class VerifyEmail extends Component
             ]);
             \Illuminate\Support\Facades\Mail::to($payload['new_email'])->send(new \App\Mail\VerifyNewEmail($user->name, $payload['code'], $signedUrl));
         } catch (\Throwable $e) {
-            Toaster::error(__('quickpanel.verification_email_resend_failed'));
+            Toaster::error(__('platform::common.verification_email_resend_failed'));
             return;
         }
-        Toaster::success(__('quickpanel.verification_email_resent'));
+        Toaster::success(__('platform::common.verification_email_resent'));
     }
 
     protected function verifyUsingToken(int $uid, string $token): void
     {
         $user = Auth::user();
         if (! $user || $user->id !== $uid) {
-            Toaster::error(__('quickpanel.verification_link_session_mismatch'));
+            Toaster::error(__('platform::common.verification_link_session_mismatch'));
             return;
         }
         $cacheKey = ProfileIndex::verificationCacheKey($uid);
         $payload = Cache::get($cacheKey);
         if (! $payload) {
-            Toaster::error(__('quickpanel.verification_not_found'));
+            Toaster::error(__('platform::common.verification_not_found'));
             return;
         }
         if (($payload['token'] ?? null) !== $token) {
-            Toaster::error(__('quickpanel.verification_token_invalid'));
+            Toaster::error(__('platform::common.verification_token_invalid'));
             return;
         }
         if (time() > (int) ($payload['expires_at'] ?? 0)) {
             Cache::forget($cacheKey);
-            Toaster::error(__('quickpanel.verification_link_expired'));
+            Toaster::error(__('platform::common.verification_link_expired'));
             return;
         }
         $this->commitEmailChange($uid, $payload['new_email'] ?? null, $cacheKey);
@@ -131,12 +131,12 @@ class VerifyEmail extends Component
     protected function commitEmailChange(int $userId, ?string $newEmail, string $cacheKey): void
     {
         if (! $newEmail) {
-            Toaster::error(__('quickpanel.pending_email_missing'));
+            Toaster::error(__('platform::common.pending_email_missing'));
             return;
         }
         $user = Auth::user();
         if (! $user || $user->id !== $userId) {
-            Toaster::error(__('quickpanel.not_authenticated'));
+            Toaster::error(__('platform::common.not_authenticated'));
             return;
         }
         $user->email = $newEmail;
@@ -144,7 +144,7 @@ class VerifyEmail extends Component
         $user->save();
         Cache::forget($cacheKey);
 
-        Toaster::success(__('quickpanel.email_verified_and_updated'));
+        Toaster::success(__('platform::common.email_verified_and_updated'));
         redirect()->route('user.dashboard.index')->send();
     }
 

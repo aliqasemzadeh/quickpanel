@@ -1,5 +1,5 @@
 <x-slot name="title">
-    {{ __('quickpanel.register') }}
+    {{ __('platform::common.register') }}
 </x-slot>
 
 <div>
@@ -34,7 +34,7 @@
         </div>
 
         <button type="submit" class="w-full rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 disabled:opacity-70 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" wire:loading.attr="disabled">
-            <span wire:loading.remove>{{ __('quickpanel.register') }}</span>
+            <span wire:loading.remove>{{ __('platform::common.register') }}</span>
             <span wire:loading>{{ __('Please wait...') }}</span>
         </button>
 

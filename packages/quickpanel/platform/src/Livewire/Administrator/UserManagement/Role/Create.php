@@ -20,7 +20,7 @@ class Create extends Component
 
         Role::create($validated);
 
-        Toaster::success(__('quickpanel.role_created'));
+        Toaster::success(__('platform::common.role_created'));
 
         $this->dispatch('pg:eventRefresh-administrator.user-management.role.index');
         $this->dispatch('modal-close');

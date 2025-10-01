@@ -37,9 +37,9 @@ class ForgetPassword extends Component
             if ($user) {
                 Mail::to($user->email)->send(new ForgotPasswordCodeMail($code, $ttlMinutes));
             }
-            Toaster::success(__('quickpanel.forgot_password_email_sent'));
+            Toaster::success(__('platform::common.forgot_password_email_sent'));
         } catch (\Throwable $e) {
-            Toaster::error(__('quickpanel.email_send_failed'));
+            Toaster::error(__('platform::common.email_send_failed'));
         }
 
         // Keep email in the input to allow resending if needed.

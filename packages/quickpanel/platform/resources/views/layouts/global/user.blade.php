@@ -53,7 +53,7 @@
                     <path stroke="currentColor" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M10 19H5a1 1 0 0 1-1-1v-1a3 3 0 0 1 3-3h2m10 1a3 3 0 0 1-3 3m3-3a3 3 0 0 0-3-3m3 3h1m-4 3a3 3 0 0 1-3-3m3 3v1m-3-4a3 3 0 0 1 3-3m-3 3h-1m4-3v-1m-2.121 1.879-.707-.707m5.656 5.656-.707-.707m-4.242 0-.707.707m5.656-5.656-.707.707M12 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                 </svg>
 
-                {{ __('quickpanel.settings') }}</a
+                {{ __('platform::common.settings') }}</a
             >
         </li>
         <li>
@@ -63,7 +63,7 @@
             >
                 <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"  class="mr-2 w-5 h-5 text-gray-400"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><rect width="8" height="6" x="8" y="12" rx="1"/><path d="M10 12v-2a2 2 0 1 1 4 0v2"/></svg>
 
-                {{ __('quickpanel.change_password') }}</a
+                {{ __('platform::common.change_password') }}</a
             >
         </li>
     </ul>
@@ -75,7 +75,7 @@
             <a
                 href="{{ route('logout') }}"
                 class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >{{ __('quickpanel.logout') }}</a
+            >{{ __('platform::common.logout') }}</a
             >
         </li>
     </ul>

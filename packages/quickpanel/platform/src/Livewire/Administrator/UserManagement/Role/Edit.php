@@ -34,7 +34,7 @@ class Edit extends Component
             'guard_name' => $this->guard_name,
         ]);
 
-        Toaster::success(__('quickpanel.role_edited'));
+        Toaster::success(__('platform::common.role_edited'));
 
         $this->dispatch('pg:eventRefresh-administrator.user-management.role.index');
         $this->dispatch('modal-close');

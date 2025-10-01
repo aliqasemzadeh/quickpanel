@@ -64,7 +64,7 @@ class Index extends Component
 
         $user = Auth::user();
         if (! $user) {
-            Toaster::error(__('quickpanel.not_authenticated') ?? 'Not authenticated.');
+            Toaster::error(__('platform::common.not_authenticated') ?? 'Not authenticated.');
             redirect()->route('login')->send();
             return;
         }
@@ -77,7 +77,7 @@ class Index extends Component
         if (! $emailChanged) {
             // No email change, just save
             $user->save();
-            Toaster::success(__('quickpanel.updated_at') ?? __('quickpanel.update') ?? 'Updated');
+            Toaster::success(__('platform::common.updated_at') ?? __('platform::common.update') ?? 'Updated');
             return;
         }
 
@@ -105,14 +105,14 @@ class Index extends Component
         try {
             Mail::to($validated['email'])->send(new VerifyNewEmail($user->name, $code, $signedUrl));
         } catch (\Throwable $e) {
-            Toaster::error(__('quickpanel.verification_email_send_failed'));
+            Toaster::error(__('platform::common.verification_email_send_failed'));
             return;
         }
 
         // Save only the name change for now
         $user->save();
 
-        Toaster::success(__('quickpanel.verification_email_sent'));
+        Toaster::success(__('platform::common.verification_email_sent'));
         redirect()->route('verify-email')->send();
     }
 
@@ -140,13 +140,13 @@ class Index extends Component
 
         $user = Auth::user();
         if (! $user) {
-            Toaster::error(__('quickpanel.invalid_current_password'));
+            Toaster::error(__('platform::common.invalid_current_password'));
             redirect()->route('login')->send();
             return;
         }
 
         if (! Hash::check($this->delete_password, $user->password)) {
-            Toaster::error(__('quickpanel.invalid_current_password'));
+            Toaster::error(__('platform::common.invalid_current_password'));
             return;
         }
 
@@ -160,13 +160,13 @@ class Index extends Component
             $user->delete();
         } catch (\Throwable $e) {
             // If soft deletes or constraints fail, show an error
-            Toaster::error(__('quickpanel.not_translated') ?? 'Unable to delete account.');
+            Toaster::error(__('platform::common.not_translated') ?? 'Unable to delete account.');
             return;
         }
 
         // Close modal and redirect
         $this->confirmingDeletion = false;
-        Toaster::success(__('quickpanel.user_deleted') ?? 'Account deleted.');
+        Toaster::success(__('platform::common.user_deleted') ?? 'Account deleted.');
 
         redirect()->route('home')->send();
     }

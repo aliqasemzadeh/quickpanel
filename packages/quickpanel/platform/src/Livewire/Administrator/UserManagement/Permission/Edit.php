@@ -34,7 +34,7 @@ class Edit extends Component
             'guard_name' => $this->guard_name,
         ]);
 
-        Toaster::success(__('quickpanel.permission_edited'));
+        Toaster::success(__('platform::common.permission_edited'));
 
         $this->dispatch('pg:eventRefresh-administrator.user-management.permission.index');
         $this->dispatch('modal-close');

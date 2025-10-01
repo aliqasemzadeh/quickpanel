@@ -20,7 +20,7 @@ class Create extends Component
 
         Permission::create($validated);
 
-        Toaster::success(__('quickpanel.permission_created'));
+        Toaster::success(__('platform::common.permission_created'));
 
         // Refresh the permission table
         $this->dispatch('pg:eventRefresh-administrator.user-management.permission.index');
