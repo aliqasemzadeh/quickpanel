@@ -3,6 +3,7 @@
 namespace QuickPanel\Platform;
 
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class QuickPanelPlatformServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,12 @@ class QuickPanelPlatformServiceProvider extends ServiceProvider
 
         // Translations
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'platform');
+
+        // Register Livewire components (package aliases)
+        Livewire::component(
+            'quick-panel.platform.livewire.administrator.auth.login',
+            \QuickPanel\Platform\Livewire\Administrator\Auth\Login::class
+        );
 
         // Register console commands
         if ($this->app->runningInConsole()) {
