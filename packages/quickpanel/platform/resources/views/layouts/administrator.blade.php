@@ -173,7 +173,7 @@
                         </li>
                     </ul>
                 </li>
-                @includeIf('menus.administrator')
+                @includeIf('quick-panel.menus.administrator')
                 <li>
                     <button
                         type="button"

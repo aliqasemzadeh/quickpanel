@@ -114,7 +114,7 @@
                         <span class="ms-3">{{ __('platform::common.dashboard') }}</span>
                     </a>
                 </li>
-                @includeIf('menus.user')
+                @includeIf('quick-panel.menus.user')
                 <li>
                     <button
                         type="button"

@@ -12,6 +12,7 @@ use PowerComponents\LivewirePowerGrid\Facades\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
 use PowerComponents\LivewirePowerGrid\Traits\WithExport;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
+use Illuminate\View\View;
 
 final class Table extends PowerGridComponent
 {
@@ -94,23 +95,8 @@ final class Table extends PowerGridComponent
         $this->dispatch('pg:eventRefresh-administrator.user-management.permission.index');
     }
 
-    public function actions($row): array
+    public function actionsFromView(\Spatie\Permission\Models\Permission $row): View
     {
-        return [
-            Button::add('edit')
-                ->slot(__('platform::common.edit'))
-                ->id()
-                ->can(auth()->user()->can('administrator_user_permission_edit'))
-                ->class('px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800')
-                ->dispatch('modal-open', ['component' => 'platform.administrator.user-management.permission.edit', 'props' => ['permissionId' => $row->id]]),
-            Button::add('delete')
-                ->slot(__('platform::common.delete'))
-                ->id()
-                ->can(auth()->user()->can('administrator_user_permission_delete'))
-                ->class('px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800')
-                ->confirm(__('platform::common.are_you_sure'))
-                ->dispatch('delete', ['id' => $row->id])
-
-        ];
+        return view('platform::livewire.administrator.user-management.permission.actions', ['permission' => $row]);
     }
 }
