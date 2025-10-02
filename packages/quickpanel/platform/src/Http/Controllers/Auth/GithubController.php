@@ -3,7 +3,7 @@
 namespace QuickPanel\Platform\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Mail\OAuthWelcomeMail;
+use QuickPanel\Platform\Mail\OAuthWelcomeMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
