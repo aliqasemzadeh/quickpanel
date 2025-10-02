@@ -31,7 +31,6 @@ class GithubController extends Controller
                 // User exists - only update name and avatar, do not store provider/provider_id
                 $user->update([
                     'name' => $githubUser->getName() ?: $githubUser->getNickname(),
-                    'avatar' => $githubUser->getAvatar(),
                 ]);
 
                 Auth::login($user);
@@ -45,8 +44,6 @@ class GithubController extends Controller
                 'name' => $githubUser->getName() ?: $githubUser->getNickname(),
                 'email' => $githubUser->getEmail(),
                 'password' => Hash::make($randomPassword),
-                'avatar' => $githubUser->getAvatar(),
-                'email_verified_at' => now(), // OAuth users are pre-verified
             ]);
 
             // Send welcome email with default password

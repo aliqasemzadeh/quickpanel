@@ -31,7 +31,6 @@ class GoogleController extends Controller
                 // User exists - only update name and avatar, do not store provider/provider_id
                 $user->update([
                     'name' => $googleUser->getName(),
-                    'avatar' => $googleUser->getAvatar(),
                 ]);
 
                 Auth::login($user);
@@ -45,8 +44,6 @@ class GoogleController extends Controller
                 'name' => $googleUser->getName(),
                 'email' => $googleUser->getEmail(),
                 'password' => Hash::make($randomPassword),
-                'avatar' => $googleUser->getAvatar(),
-                'email_verified_at' => now(), // OAuth users are pre-verified
             ]);
 
             // Send welcome email with default password
