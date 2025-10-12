@@ -2610,16 +2610,16 @@
         },
         {
             "name": "laravel-lang/moonshine",
-            "version": "1.3.8",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/moonshine.git",
-                "reference": "a4bf8eeef0e44ed9fb596379e9ec8627c401e6cb"
+                "reference": "ee755d0d15fd941b101ec346d6c7e65b642968fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/moonshine/zipball/a4bf8eeef0e44ed9fb596379e9ec8627c401e6cb",
-                "reference": "a4bf8eeef0e44ed9fb596379e9ec8627c401e6cb",
+                "url": "https://api.github.com/repos/Laravel-Lang/moonshine/zipball/ee755d0d15fd941b101ec346d6c7e65b642968fd",
+                "reference": "ee755d0d15fd941b101ec346d6c7e65b642968fd",
                 "shasum": ""
             },
             "require": {
@@ -2672,9 +2672,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Lang/moonshine/issues",
-                "source": "https://github.com/Laravel-Lang/moonshine/tree/1.3.8"
+                "source": "https://github.com/Laravel-Lang/moonshine/tree/1.4.0"
             },
-            "time": "2025-06-23T09:36:08+00:00"
+            "time": "2025-10-10T17:33:12+00:00"
         },
         {
             "name": "laravel-lang/native-country-names",
@@ -3061,16 +3061,16 @@
         },
         {
             "name": "laravel-lang/starter-kits",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/starter-kits.git",
-                "reference": "557ac466cdce66914ef9550c4ce10bc0606d0c8c"
+                "reference": "0d08c2fa3846ec0ed1254f4e17df1ccb1dcac904"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/starter-kits/zipball/557ac466cdce66914ef9550c4ce10bc0606d0c8c",
-                "reference": "557ac466cdce66914ef9550c4ce10bc0606d0c8c",
+                "url": "https://api.github.com/repos/Laravel-Lang/starter-kits/zipball/0d08c2fa3846ec0ed1254f4e17df1ccb1dcac904",
+                "reference": "0d08c2fa3846ec0ed1254f4e17df1ccb1dcac904",
                 "shasum": ""
             },
             "require": {
@@ -3122,9 +3122,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Lang/starter-kits/issues",
-                "source": "https://github.com/Laravel-Lang/starter-kits/tree/1.4.1"
+                "source": "https://github.com/Laravel-Lang/starter-kits/tree/1.4.2"
             },
-            "time": "2025-10-10T07:17:09+00:00"
+            "time": "2025-10-10T17:32:00+00:00"
         },
         {
             "name": "laravel/framework",
@@ -4458,16 +4458,16 @@
         },
         {
             "name": "mews/captcha",
-            "version": "3.4.6",
+            "version": "3.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mewebstudio/captcha.git",
-                "reference": "cead591ddc544b2b80a4136897893dd3bd70e7a7"
+                "reference": "2622c4f90dd621f19fe57e03e45f6f099509e839"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mewebstudio/captcha/zipball/cead591ddc544b2b80a4136897893dd3bd70e7a7",
-                "reference": "cead591ddc544b2b80a4136897893dd3bd70e7a7",
+                "url": "https://api.github.com/repos/mewebstudio/captcha/zipball/2622c4f90dd621f19fe57e03e45f6f099509e839",
+                "reference": "2622c4f90dd621f19fe57e03e45f6f099509e839",
                 "shasum": ""
             },
             "require": {
@@ -4525,9 +4525,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mewebstudio/captcha/issues",
-                "source": "https://github.com/mewebstudio/captcha/tree/3.4.6"
+                "source": "https://github.com/mewebstudio/captcha/tree/3.4.7"
             },
-            "time": "2025-04-16T15:40:08+00:00"
+            "time": "2025-10-11T14:42:33+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6052,12 +6052,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/quickpanel/platform.git",
-                "reference": "9ebb809cfae76213ec59fba680e6f923596c2523"
+                "reference": "a663320a68d944b25a05cef94f6eef309f36f551"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/quickpanel/platform/zipball/9ebb809cfae76213ec59fba680e6f923596c2523",
-                "reference": "9ebb809cfae76213ec59fba680e6f923596c2523",
+                "url": "https://api.github.com/repos/quickpanel/platform/zipball/a663320a68d944b25a05cef94f6eef309f36f551",
+                "reference": "a663320a68d944b25a05cef94f6eef309f36f551",
                 "shasum": ""
             },
             "require": {
@@ -6101,7 +6101,7 @@
                 "issues": "https://github.com/quickpanel/platform/issues",
                 "source": "https://github.com/quickpanel/platform/tree/main"
             },
-            "time": "2025-10-10T09:32:25+00:00"
+            "time": "2025-10-11T01:12:01+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
