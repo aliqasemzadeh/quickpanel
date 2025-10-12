@@ -51,6 +51,9 @@ QuickPanel is a modern admin panel starter built on the TALL stack (Tailwind CSS
 
 Open http://localhost:8000 (or your APP_URL).
 
+## Laravel Setup
+You can use laravel `composer setup` to install quickpanel.
+
 ## Features at a Glance
 - Authentication with email verification (Livewire components under resources/views/livewire/auth)
 - User dashboard and settings (including password change)
@@ -71,28 +74,6 @@ Open http://localhost:8000 (or your APP_URL).
 - Socialite: Add provider credentials to .env (e.g., GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, GITHUB_REDIRECT_URL) and wire up controllers/routes.
 - Log Viewer: opcodesio/log-viewer exposes a UI to browse logs. Protect the route in production.
 
-## Scripts
-- composer run dev: Runs PHP server, queue listener, and Vite together.
-- composer test: Clears config and runs test suite.
-- npm run dev: Vite dev server.
-- npm run build: Production assets build.
-
-## Testing
-- php artisan test
-- or composer test
-
-## Troubleshooting
-- Vite HMR issues: Ensure APP_URL matches the URL you use and that npm run dev is running. If behind proxies, set ASSET_URL.
-- Email verification: Configure MAIL_MAILER, MAIL_HOST, MAIL_USERNAME, etc. For local dev, use Mailpit or log mailer.
-- Queue not processing: Ensure queue:listen/queue:work is running and QUEUE_CONNECTION is set (database or redis).
-- Permission changes not taking effect: php artisan permission:cache-reset
-- Windows path issues: Use backslashes in system paths; Laravel handles URLs with forward slashes.
-
-## Directory Hints
-- Livewire components: app/Livewire and resources/views/livewire
-- Layouts: resources/views/layouts
-- Language files: lang/
-- Routes: routes/
 
 ## Security & Contributions
 Please open issues or PRs in this repository. For security concerns, contact the maintainer privately and avoid filing public issues with exploit details.
