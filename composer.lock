@@ -6094,12 +6094,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/quickpanel/platform.git",
-                "reference": "a663320a68d944b25a05cef94f6eef309f36f551"
+                "reference": "fd2006740121a0fbb59a2a9a9d0aa927705f2682"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/quickpanel/platform/zipball/a663320a68d944b25a05cef94f6eef309f36f551",
-                "reference": "a663320a68d944b25a05cef94f6eef309f36f551",
+                "url": "https://api.github.com/repos/quickpanel/platform/zipball/fd2006740121a0fbb59a2a9a9d0aa927705f2682",
+                "reference": "fd2006740121a0fbb59a2a9a9d0aa927705f2682",
                 "shasum": ""
             },
             "require": {
@@ -6143,7 +6143,7 @@
                 "issues": "https://github.com/quickpanel/platform/issues",
                 "source": "https://github.com/quickpanel/platform/tree/main"
             },
-            "time": "2025-10-11T01:12:01+00:00"
+            "time": "2025-10-12T07:47:45+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

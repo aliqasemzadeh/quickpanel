@@ -29,8 +29,9 @@
                         Ghost Red Button
                     </x-flowbite-ui::button>
 
-                    <x-flowbite-ui::button variant="solid" color="purple" size="md">
-                        Purple Button
+
+                    <x-flowbite-ui::button variant="solid" color="purple" size="sm">
+                        solid purple Button
                     </x-flowbite-ui::button>
 
                     <x-flowbite-ui::button variant="outline" color="gray" size="md">
@@ -61,7 +62,7 @@
                             color="blue"
                         />
                     </div>
-                    
+
                     <div class="space-y-4">
                         <x-flowbite-ui::input
                             type="password"
@@ -104,42 +105,42 @@
                     <p class="text-gray-600 dark:text-gray-300">This is a basic card component with header and footer.</p>
                 </x-flowbite-ui::card>
 
-                <x-flowbite-ui::card 
-                    variant="elevated" 
-                    header="Elevated Card" 
+                <x-flowbite-ui::card
+                    variant="elevated"
+                    header="Elevated Card"
                     footer="With Enhanced Shadow"
                     shadow="lg"
                 >
                     <p class="text-gray-600 dark:text-gray-300">This card has an elevated appearance with enhanced shadow.</p>
                 </x-flowbite-ui::card>
 
-                <x-flowbite-ui::card 
-                    variant="outlined" 
-                    header="Outlined Card" 
+                <x-flowbite-ui::card
+                    variant="outlined"
+                    header="Outlined Card"
                     footer="With Border"
                 >
                     <p class="text-gray-600 dark:text-gray-300">This card has a prominent border outline.</p>
                 </x-flowbite-ui::card>
 
-                <x-flowbite-ui::card 
-                    variant="filled" 
-                    header="Filled Card" 
+                <x-flowbite-ui::card
+                    variant="filled"
+                    header="Filled Card"
                     footer="With Background"
                 >
                     <p class="text-gray-600 dark:text-gray-300">This card has a filled background color.</p>
                 </x-flowbite-ui::card>
 
-                <x-flowbite-ui::card 
-                    variant="glass" 
-                    header="Glass Card" 
+                <x-flowbite-ui::card
+                    variant="glass"
+                    header="Glass Card"
                     footer="With Backdrop Blur"
                     shadow="xl"
                 >
                     <p class="text-gray-600 dark:text-gray-300">This card has a glass morphism effect.</p>
                 </x-flowbite-ui::card>
 
-                <x-flowbite-ui::card 
-                    header="Collapsible Card" 
+                <x-flowbite-ui::card
+                    header="Collapsible Card"
                     footer="Click Header to Toggle"
                     collapsed="false"
                 >
@@ -149,46 +150,6 @@
             </div>
         </div>
 
-        <!-- Livewire Components Demo -->
-        <div class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Interactive Components</h2>
-            <x-flowbite-ui::card header="Livewire Components" footer="Interactive components with real-time updates" variant="glass" shadow="lg">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Livewire Buttons</h3>
-                        <div class="space-y-3">
-                            <livewire:button 
-                                variant="solid" 
-                                color="blue" 
-                                size="md"
-                                text="Interactive Button"
-                                wire:key="demo-button-1"
-                            />
-                            
-                            <livewire:button 
-                                variant="outline" 
-                                color="green" 
-                                size="md"
-                                text="Click Me"
-                                wire:key="demo-button-2"
-                            />
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Livewire Inputs</h3>
-                        <div class="space-y-3">
-                            <livewire:input 
-                                type="text" 
-                                label="Livewire Input" 
-                                placeholder="Type something..."
-                                wire:key="demo-input"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </x-flowbite-ui::card>
-        </div>
 
         <!-- Dark Mode Toggle Demo -->
         <div class="mb-12">

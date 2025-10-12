@@ -11,7 +11,7 @@
 
 @php
     $baseClasses = 'bg-white dark:bg-gray-800';
-    
+
     $variantClasses = [
         'default' => 'bg-white dark:bg-gray-800',
         'elevated' => 'bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/20',
@@ -19,7 +19,7 @@
         'filled' => 'bg-gray-50 dark:bg-gray-700',
         'glass' => 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm'
     ];
-    
+
     $shadowClasses = [
         'none' => '',
         'sm' => 'shadow-sm dark:shadow-gray-900/20',
@@ -28,7 +28,7 @@
         'xl' => 'shadow-xl dark:shadow-gray-900/40',
         '2xl' => 'shadow-2xl dark:shadow-gray-900/50'
     ];
-    
+
     $borderClasses = $border ? 'border border-gray-200 dark:border-gray-700' : '';
     $classes = $variantClasses[$variant] . ' ' . $padding . ' ' . $shadowClasses[$shadow] . ' ' . $rounded . ' ' . $borderClasses;
 @endphp
@@ -41,8 +41,8 @@
                     {{ $header }}
                 </div>
                 @if($collapsed !== null)
-                    <button 
-                        wire:click="toggleCollapse" 
+                    <button
+                        wire:click="toggleCollapse"
                         class="ml-4 rtl:ml-0 rtl:mr-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors duration-200 rtl:float-left"
                         aria-label="{{ $collapsed ? 'Expand' : 'Collapse' }}"
                     >
@@ -54,13 +54,13 @@
             </div>
         </div>
     @endif
-    
+
     @if(!$collapsed)
-        <div class="card-body text-gray-900 dark:text-gray-100">
+        <div class="card-body text-gray-900 dark:text-gray-50">
             {{ $slot }}
         </div>
     @endif
-    
+
     @if($footer)
         <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 rtl:border-r-0 rtl:border-l-0">
             <div class="text-gray-600 dark:text-gray-300 rtl:text-right">
