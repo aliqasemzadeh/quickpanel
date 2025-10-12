@@ -14,8 +14,9 @@ class Card extends Component
     public $header = null;
     public $footer = null;
     public $collapsed = false;
+    public $variant = 'default';
 
-    public function mount($padding = 'p-6', $shadow = 'shadow-sm', $rounded = 'rounded-lg', $border = true, $header = null, $footer = null, $collapsed = false)
+    public function mount($padding = 'p-6', $shadow = 'shadow-sm', $rounded = 'rounded-lg', $border = true, $header = null, $footer = null, $collapsed = false, $variant = 'default')
     {
         $this->padding = $padding;
         $this->shadow = $shadow;
@@ -24,6 +25,7 @@ class Card extends Component
         $this->header = $header;
         $this->footer = $footer;
         $this->collapsed = $collapsed;
+        $this->variant = $variant;
     }
 
     public function toggleCollapse()
