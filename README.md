@@ -2,6 +2,8 @@
 
 QuickPanel is a modern admin panel starter built on the TALL stack (Tailwind CSS, Alpine.js, Laravel, Livewire). It ships with authentication, authorization, localization, beautiful datagrids, modals/toasts, and developer tooling to help you start building dashboards and back-office applications quickly.
 
+View project screenshots in the [screenshots](screenshots/) folder.
+
 ## Tech Stack
 - PHP ^8.2, Laravel ^12
 - Livewire ^3 (SPA-like interactions without heavy JS)
