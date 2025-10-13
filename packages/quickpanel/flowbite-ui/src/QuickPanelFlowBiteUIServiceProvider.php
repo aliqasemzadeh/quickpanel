@@ -60,3 +60,4 @@ class QuickPanelFlowBiteUIServiceProvider extends ServiceProvider
         }
     }
 }
+

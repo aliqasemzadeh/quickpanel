@@ -75,3 +75,4 @@ return [
         'namespace' => 'QuickPanel\\FlowBiteUI\\Components',
     ],
 ];
+
