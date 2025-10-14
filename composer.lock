@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "002921ea5c64513839111ecc4da1883c",
+    "content-hash": "6ef0b0c88119cb1e9d1a70176e4b8a89",
     "packages": [
         {
             "name": "archtechx/enums",
@@ -6048,11 +6048,17 @@
         },
         {
             "name": "quickpanel/flowbite-ui",
-            "version": "dev-components",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/quickpanel/flowbite-ui.git",
+                "reference": "6e6afe7689c1ce927af7b7200c08f2a0927adc65"
+            },
             "dist": {
-                "type": "path",
-                "url": "./packages/quickpanel/flowbite-ui",
-                "reference": "799d09846bc5f0d81f18dce2c1cbe5f6a62722c4"
+                "type": "zip",
+                "url": "https://api.github.com/repos/quickpanel/flowbite-ui/zipball/6e6afe7689c1ce927af7b7200c08f2a0927adc65",
+                "reference": "6e6afe7689c1ce927af7b7200c08f2a0927adc65",
+                "shasum": ""
             },
             "require": {
                 "illuminate/console": "^10.0|^11.0|^12.0",
@@ -6061,6 +6067,7 @@
                 "livewire/livewire": "^3.5.19",
                 "php": "^8.1"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -6074,6 +6081,7 @@
                     "QuickPanel\\FlowBiteUI\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6084,9 +6092,11 @@
                 }
             ],
             "description": "FlowBite UI components for QuickPanel",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/quickpanel/flowbite-ui/issues",
+                "source": "https://github.com/quickpanel/flowbite-ui/tree/main"
+            },
+            "time": "2025-10-13T08:33:42+00:00"
         },
         {
             "name": "quickpanel/platform",
@@ -6094,12 +6104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/quickpanel/platform.git",
-                "reference": "fd2006740121a0fbb59a2a9a9d0aa927705f2682"
+                "reference": "9ef3cbb74036147166f0cbbf04442a4d21063793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/quickpanel/platform/zipball/fd2006740121a0fbb59a2a9a9d0aa927705f2682",
-                "reference": "fd2006740121a0fbb59a2a9a9d0aa927705f2682",
+                "url": "https://api.github.com/repos/quickpanel/platform/zipball/9ef3cbb74036147166f0cbbf04442a4d21063793",
+                "reference": "9ef3cbb74036147166f0cbbf04442a4d21063793",
                 "shasum": ""
             },
             "require": {
@@ -6112,6 +6122,7 @@
                 "opcodesio/log-viewer": "^3.19",
                 "php": "^8.3",
                 "power-components/livewire-powergrid": "^6.6",
+                "spatie/laravel-activitylog": "^4.10",
                 "spatie/laravel-permission": "^6.21"
             },
             "default-branch": true,
@@ -6143,7 +6154,7 @@
                 "issues": "https://github.com/quickpanel/platform/issues",
                 "source": "https://github.com/quickpanel/platform/tree/main"
             },
-            "time": "2025-10-12T07:47:45+00:00"
+            "time": "2025-10-14T11:09:50+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -6342,6 +6353,97 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.1"
             },
             "time": "2025-09-04T20:59:21+00:00"
+        },
+        {
+            "name": "spatie/laravel-activitylog",
+            "version": "4.10.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-activitylog.git",
+                "reference": "bb879775d487438ed9a99e64f09086b608990c10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/bb879775d487438ed9a99e64f09086b608990c10",
+                "reference": "bb879775d487438ed9a99e64f09086b608990c10",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+                "illuminate/database": "^8.69 || ^9.27 || ^10.0 || ^11.0 || ^12.0",
+                "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.6.3"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "orchestra/testbench": "^6.23 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
+                "pestphp/pest": "^1.20 || ^2.0 || ^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Activitylog\\ActivitylogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Activitylog\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev.gummibeer@gmail.com",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A very simple activity logger to monitor the users of your website or application",
+            "homepage": "https://github.com/spatie/activitylog",
+            "keywords": [
+                "activity",
+                "laravel",
+                "log",
+                "spatie",
+                "user"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-activitylog/issues",
+                "source": "https://github.com/spatie/laravel-activitylog/tree/4.10.2"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-06-15T06:59:49+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -9766,16 +9868,16 @@
         },
         {
             "name": "laravel/boost",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/boost.git",
-                "reference": "ef8800843efc581965c38393adb63ba336dc3979"
+                "reference": "8d2dedf7779c2e175a02a176dec38e6f9b35352b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/boost/zipball/ef8800843efc581965c38393adb63ba336dc3979",
-                "reference": "ef8800843efc581965c38393adb63ba336dc3979",
+                "url": "https://api.github.com/repos/laravel/boost/zipball/8d2dedf7779c2e175a02a176dec38e6f9b35352b",
+                "reference": "8d2dedf7779c2e175a02a176dec38e6f9b35352b",
                 "shasum": ""
             },
             "require": {
@@ -9784,7 +9886,7 @@
                 "illuminate/contracts": "^10.49.0|^11.45.3|^12.28.1",
                 "illuminate/routing": "^10.49.0|^11.45.3|^12.28.1",
                 "illuminate/support": "^10.49.0|^11.45.3|^12.28.1",
-                "laravel/mcp": "^0.2.0",
+                "laravel/mcp": "^0.2.0|^0.3.0",
                 "laravel/prompts": "0.1.25|^0.3.6",
                 "laravel/roster": "^0.2.8",
                 "php": "^8.1"
@@ -9828,20 +9930,20 @@
                 "issues": "https://github.com/laravel/boost/issues",
                 "source": "https://github.com/laravel/boost"
             },
-            "time": "2025-09-30T09:34:43+00:00"
+            "time": "2025-10-14T01:13:19+00:00"
         },
         {
             "name": "laravel/mcp",
-            "version": "v0.2.1",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/mcp.git",
-                "reference": "0ecf0c04b20e5946ae080e8d67984d5c555174b0"
+                "reference": "4e1389eedb4741a624e26cc3660b31bae04c4342"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/mcp/zipball/0ecf0c04b20e5946ae080e8d67984d5c555174b0",
-                "reference": "0ecf0c04b20e5946ae080e8d67984d5c555174b0",
+                "url": "https://api.github.com/repos/laravel/mcp/zipball/4e1389eedb4741a624e26cc3660b31bae04c4342",
+                "reference": "4e1389eedb4741a624e26cc3660b31bae04c4342",
                 "shasum": ""
             },
             "require": {
@@ -9901,7 +10003,7 @@
                 "issues": "https://github.com/laravel/mcp/issues",
                 "source": "https://github.com/laravel/mcp"
             },
-            "time": "2025-09-24T15:48:16+00:00"
+            "time": "2025-10-07T14:28:56+00:00"
         },
         {
             "name": "laravel/pail",

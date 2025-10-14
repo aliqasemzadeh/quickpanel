@@ -10,8 +10,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "quickpanel/platform": "dev-main",
-        "quickpanel/flowbite-ui": "dev-components",
         "elegantly/livewire-modal": "^1.0",
         "laravel-lang/common": "^6.7",
         "laravel/framework": "^12.0",
@@ -23,11 +21,13 @@
         "mews/captcha": "^3.4",
         "opcodesio/log-viewer": "^3.19",
         "power-components/livewire-powergrid": "^6.5",
+        "quickpanel/flowbite-ui": "dev-main",
+        "quickpanel/platform": "dev-main",
         "spatie/laravel-permission": "^6.21"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
-        "laravel/boost": "^1.0",
+        "laravel/boost": "^1.3",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.41",
@@ -43,12 +43,6 @@
             "Database\\Seeders\\": "database/seeders/"
         }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./packages/quickpanel/flowbite-ui"
-        }
-    ],
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
